@@ -75,7 +75,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "PayMint — Fund your wallet. Pay every bill. Instantly." },
       { name: "description", content: "PayMint is the mobile-first wallet for airtime, data, eSIMs, electricity, cable TV and more. Fund via virtual account and pay bills in seconds — even from WhatsApp." },
-      { name: "author", content: "PayMint" },
+      { name: "author", content: "Opafunso Oluwaferanmi Benjamin" },
+      { name: "creator", content: "Opafunso Oluwaferanmi Benjamin" },
+      { name: "designer", content: "Opafunso Oluwaferanmi Benjamin" },
+      { name: "publisher", content: "PayMint" },
       { property: "og:title", content: "PayMint — Fund your wallet. Pay every bill." },
       { property: "og:description", content: "One wallet for airtime, data, eSIMs, electricity, cable TV and bills. Pay from the app or straight from WhatsApp." },
       { property: "og:type", content: "website" },
@@ -99,12 +102,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PayMint",
+    "url": "https://paymint.co",
+    "creator": {
+      "@type": "Person",
+      "name": "Opafunso Oluwaferanmi Benjamin",
+      "url": "https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share"
+    }
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
+        <div dangerouslySetInnerHTML={{ __html: '<!-- Website designed & developed by Opafunso Oluwaferanmi Benjamin - https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share -->' }} style={{ display: 'none' }} />
         {children}
         <Scripts />
       </body>
