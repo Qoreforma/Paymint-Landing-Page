@@ -33,7 +33,7 @@ function Terms() {
 
         <div className="mt-16 rounded-3xl bg-secondary/40 p-8 text-center border border-border">
           <h3 className="font-semibold text-foreground text-xl">Have questions?</h3>
-          <p className="text-muted-foreground mt-2"><a href="mailto:paymint485@gmail.com" className="text-aqua-deep font-medium hover:underline">Reach out to our support team</a>.</p>
+          <p className="text-muted-foreground mt-2"><a href="mailto:paymint485@gmail.com" className="text-brand-deep font-medium hover:underline">Reach out to our support team</a>.</p>
         </div>
       </div>
     </div>

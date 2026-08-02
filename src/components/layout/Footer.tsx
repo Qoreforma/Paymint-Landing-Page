@@ -18,9 +18,9 @@ export function Footer() {
             Product
           </div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="/#features" className="text-ink/80 transition hover:text-aqua-deep">Features</a></li>
-            <li><a href="/#how" className="text-ink/80 transition hover:text-aqua-deep">How it works</a></li>
-            <li><a href="/#download" className="text-ink/80 transition hover:text-aqua-deep">Download</a></li>
+            <li><a href="/#features" className="text-ink/80 transition hover:text-brand-deep">Features</a></li>
+            <li><a href="/#how" className="text-ink/80 transition hover:text-brand-deep">How it works</a></li>
+            <li><a href="/#download" className="text-ink/80 transition hover:text-brand-deep">Download</a></li>
           </ul>
         </div>
         <div>
@@ -28,9 +28,9 @@ export function Footer() {
             Company
           </div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="/#refer" className="text-ink/80 transition hover:text-aqua-deep">Refer & Earn</a></li>
-            <li><a href="/#refer" className="text-ink/80 transition hover:text-aqua-deep">Partners</a></li>
-            <li><a href="mailto:paymint485@gmail.com" className="text-ink/80 transition hover:text-aqua-deep">Contact</a></li>
+            <li><a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">Refer & Earn</a></li>
+            <li><a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">Partners</a></li>
+            <li><a href="mailto:paymint485@gmail.com" className="text-ink/80 transition hover:text-brand-deep">Contact</a></li>
           </ul>
         </div>
         <div>
@@ -38,9 +38,9 @@ export function Footer() {
             Legal
           </div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link to="/terms" className="text-ink/80 transition hover:text-aqua-deep">Terms</Link></li>
-            <li><Link to="/privacy" className="text-ink/80 transition hover:text-aqua-deep">Privacy</Link></li>
-            <li><Link to="/security" className="text-ink/80 transition hover:text-aqua-deep">Security</Link></li>
+            <li><Link to="/terms" className="text-ink/80 transition hover:text-brand-deep">Terms</Link></li>
+            <li><Link to="/privacy" className="text-ink/80 transition hover:text-brand-deep">Privacy</Link></li>
+            <li><Link to="/security" className="text-ink/80 transition hover:text-brand-deep">Security</Link></li>
           </ul>
         </div>
       </div>

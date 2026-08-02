@@ -16,7 +16,7 @@ import {
   Sparkles,
   Menu,
 } from "lucide-react";
-import phoneMockup from "@/assets/paymint-phone.png";
+import phoneMockup from "@/assets/phoneImage.png";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -52,10 +52,10 @@ function WebButton() {
       href={WEB_APP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-center gap-3 rounded-2xl border-2 border-ink/10 bg-white px-5 py-3 text-ink transition hover:border-aqua hover:shadow-[0_10px_30px_-10px_oklch(0.82_0.13_200_/_0.5)]"
+      className="group inline-flex items-center gap-3 rounded-2xl border-2 border-ink/10 bg-white px-5 py-3 text-ink transition hover:border-brand hover:shadow-[0_10px_30px_-10px_oklch(0.82_0.13_200_/_0.5)]"
     >
-      <div className="grid h-7 w-7 place-items-center rounded-lg bg-aqua-soft">
-        <Globe className="h-4 w-4 text-aqua-deep" />
+      <div className="grid h-7 w-7 place-items-center rounded-lg bg-brand-soft">
+        <Globe className="h-4 w-4 text-brand-deep" />
       </div>
       <div className="text-left leading-tight">
         <div className="text-[10px] uppercase tracking-wider text-muted-foreground">No app? No problem</div>
@@ -79,14 +79,14 @@ function DownloadRow() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 gradient-aqua-radial" />
-      <div className="pointer-events-none absolute -right-24 top-20 h-96 w-96 rounded-full bg-aqua/30 blur-3xl" />
-      <div className="pointer-events-none absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-aqua-soft/60 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 gradient-brand-radial" />
+      <div className="pointer-events-none absolute -right-24 top-20 h-96 w-96 rounded-full bg-brand/30 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-brand-soft/60 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 pt-12 pb-20 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:px-8 lg:pt-20 lg:pb-28">
         <div className="flex flex-col justify-center">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-aqua/40 bg-white/70 px-3 py-1.5 text-xs font-medium text-aqua-deep backdrop-blur">
-            <span className="grid h-4 w-4 place-items-center rounded-full bg-aqua">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 bg-white/70 px-3 py-1.5 text-xs font-medium text-brand-deep backdrop-blur">
+            <span className="grid h-4 w-4 place-items-center rounded-full bg-brand">
               <Check className="h-3 w-3 text-white" strokeWidth={3} />
             </span>
             New — Pay bills straight from WhatsApp
@@ -94,7 +94,7 @@ function Hero() {
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
             Fund your wallet.<br />
-            <span className="text-gradient-aqua">Pay every bill.</span><br />
+            <span className="text-gradient-brand">Pay every bill.</span><br />
             Instantly.
           </h1>
 
@@ -109,22 +109,22 @@ function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-aqua-deep" />
+              <ShieldCheck className="h-4 w-4 text-brand-deep" />
               Bank-level security
             </div>
             <div className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-aqua-deep" />
+              <BadgeCheck className="h-4 w-4 text-brand-deep" />
               Licensed payment partner
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-aqua-deep" />
+              <Zap className="h-4 w-4 text-brand-deep" />
               Instant settlement
             </div>
           </div>
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 -z-10 mx-auto h-[520px] max-w-md rounded-[3rem] gradient-aqua opacity-40 blur-2xl" />
+          <div className="absolute inset-0 -z-10 mx-auto h-[520px] max-w-md rounded-[3rem] gradient-brand opacity-40 blur-2xl" />
           <img
             src={phoneMockup}
             alt="PayMint app on a smartphone showing wallet balance and bill payment options"
@@ -134,8 +134,8 @@ function Hero() {
           />
           <div className="absolute -left-2 top-16 hidden rounded-2xl border border-border bg-white p-3 shadow-xl sm:block">
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-aqua-soft">
-                <MessageCircle className="h-5 w-5 text-aqua-deep" />
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-soft">
+                <MessageCircle className="h-5 w-5 text-brand-deep" />
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">via WhatsApp</div>
@@ -145,8 +145,8 @@ function Hero() {
           </div>
           <div className="absolute -right-2 bottom-24 hidden rounded-2xl border border-border bg-white p-3 shadow-xl sm:block">
             <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-aqua-soft">
-                <Wallet className="h-5 w-5 text-aqua-deep" />
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-soft">
+                <Wallet className="h-5 w-5 text-brand-deep" />
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Wallet funded</div>
@@ -187,7 +187,7 @@ function HowItWorks() {
   return (
     <section id="how" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
-        <div className="text-sm font-semibold uppercase tracking-widest text-aqua-deep">How it works</div>
+        <div className="text-sm font-semibold uppercase tracking-widest text-brand-deep">How it works</div>
         <h2 className="mt-3 text-4xl font-bold sm:text-5xl">From transfer to paid, in seconds</h2>
         <p className="mt-4 text-muted-foreground">
           A wallet you fund by bank transfer, spent on the bills you already pay every month.
@@ -198,13 +198,13 @@ function HowItWorks() {
         {steps.map((s, i) => (
           <div
             key={s.title}
-            className="group relative rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-aqua hover:shadow-[0_20px_40px_-20px_oklch(0.82_0.13_200_/_0.4)]"
+            className="group relative rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-brand hover:shadow-[0_20px_40px_-20px_oklch(0.82_0.13_200_/_0.4)]"
           >
             <div className="flex items-center justify-between">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-aqua-soft text-aqua-deep">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft text-brand-deep">
                 <s.icon className="h-6 w-6" />
               </div>
-              <span className="font-display text-2xl font-bold text-aqua/70">0{i + 1}</span>
+              <span className="font-display text-2xl font-bold text-brand/70">0{i + 1}</span>
             </div>
             <h3 className="mt-6 text-lg font-semibold">{s.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
@@ -228,7 +228,7 @@ function Features() {
     <section id="features" className="bg-secondary/40 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="text-sm font-semibold uppercase tracking-widest text-aqua-deep">Features</div>
+          <div className="text-sm font-semibold uppercase tracking-widest text-brand-deep">Features</div>
           <h2 className="mt-3 text-4xl font-bold sm:text-5xl">Everything money should already do</h2>
         </div>
 
@@ -254,7 +254,7 @@ function Features() {
                   <div className="font-display text-2xl font-bold tracking-tight">9042 1188 03</div>
                   <div className="text-sm text-muted-foreground">PayMint / Wema Bank</div>
                 </div>
-                <div className="rounded-full bg-aqua-soft px-3 py-1 text-xs font-semibold text-aqua-deep">
+                <div className="rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold text-brand-deep">
                   ● Live
                 </div>
               </div>
@@ -262,7 +262,7 @@ function Features() {
           </div>
 
           {/* All bills */}
-          <div className="lg:col-span-5 rounded-3xl border border-border gradient-aqua p-8 sm:p-10 text-ink">
+          <div className="lg:col-span-5 rounded-3xl border border-border gradient-brand p-8 sm:p-10 text-ink">
             <div className="grid h-11 w-11 place-items-center rounded-xl bg-white/70">
               <Sparkles className="h-5 w-5" />
             </div>
@@ -294,7 +294,7 @@ function Features() {
               no app-switching, no menus.
             </p>
             <div className="mt-6 space-y-2">
-              <div className="ml-auto w-fit max-w-[80%] rounded-2xl rounded-br-sm bg-aqua-soft px-4 py-2 text-sm">
+              <div className="ml-auto w-fit max-w-[80%] rounded-2xl rounded-br-sm bg-brand-soft px-4 py-2 text-sm">
                 Buy ₦2,000 MTN airtime
               </div>
               <div className="w-fit max-w-[80%] rounded-2xl rounded-bl-sm bg-secondary px-4 py-2 text-sm">
@@ -306,7 +306,7 @@ function Features() {
           {/* Refer & Earn card */}
           <div className="lg:col-span-7 rounded-3xl border border-border bg-ink p-8 sm:p-10 text-white">
             <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-aqua text-ink">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand text-ink">
                 <Gift className="h-5 w-5" />
               </div>
               <span className="text-sm font-semibold uppercase tracking-widest text-white/60">Refer & Earn</span>
@@ -319,9 +319,9 @@ function Features() {
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <div className="rounded-2xl bg-white/10 px-4 py-3">
                 <div className="text-xs uppercase tracking-widest text-white/60">Bonus / referral</div>
-                <div className="font-display text-2xl font-bold text-aqua">₦1,500+</div>
+                <div className="font-display text-2xl font-bold text-brand">₦1,500+</div>
               </div>
-              <a href="#refer" className="inline-flex items-center gap-2 rounded-full bg-aqua px-5 py-3 font-semibold text-ink transition hover:opacity-90">
+              <a href="#refer" className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 font-semibold text-ink transition hover:opacity-90">
                 Become a partner <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -335,13 +335,13 @@ function Features() {
 function ReferSpotlight() {
   return (
     <section id="refer" className="relative overflow-hidden py-24">
-      <div className="pointer-events-none absolute inset-0 gradient-aqua-radial" />
+      <div className="pointer-events-none absolute inset-0 gradient-brand-radial" />
       <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-        <div className="inline-flex items-center gap-2 rounded-full border border-aqua/40 bg-white/70 px-3 py-1.5 text-xs font-medium text-aqua-deep backdrop-blur">
+        <div className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-white/70 px-3 py-1.5 text-xs font-medium text-brand-deep backdrop-blur">
           <Gift className="h-4 w-4" /> PayMint Partners
         </div>
         <h2 className="mt-6 font-display text-4xl font-bold sm:text-6xl">
-          Creators earn cash <span className="text-gradient-aqua">every time</span> someone joins.
+          Creators earn cash <span className="text-gradient-brand">every time</span> someone joins.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           Built for influencers, community builders and everyday users. Share your link, watch signups roll in,
@@ -386,7 +386,7 @@ function TrustStrip() {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         {items.map((i) => (
           <div key={i.title} className="flex items-start gap-4">
-            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-aqua-soft text-aqua-deep">
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-deep">
               <i.icon className="h-5 w-5" />
             </div>
             <div>
@@ -403,7 +403,7 @@ function TrustStrip() {
 function DownloadCTA() {
   return (
     <section id="download" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="relative overflow-hidden rounded-[2.5rem] gradient-aqua p-10 sm:p-16">
+      <div className="relative overflow-hidden rounded-[2.5rem] gradient-brand p-10 sm:p-16">
         <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/40 blur-2xl" />
         <div className="pointer-events-none absolute -left-10 bottom-0 h-64 w-64 rounded-full bg-ink/10 blur-2xl" />
         <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">

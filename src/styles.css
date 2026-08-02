@@ -32,9 +32,9 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-aqua: var(--aqua);
-  --color-aqua-soft: var(--aqua-soft);
-  --color-aqua-deep: var(--aqua-deep);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-deep: var(--brand-deep);
   --color-ink: var(--ink);
 }
 
@@ -42,9 +42,9 @@
   --radius: 1rem;
 
   /* PayMint brand */
-  --aqua: rgb(11, 69, 200);        /* Deep blue from Logo */
-  --aqua-soft: rgba(11, 69, 200, 0.15);   /* pale blue */
-  --aqua-deep: rgb(8, 48, 140);   /* deeper blue */
+  --brand: rgb(11, 69, 200);        /* Deep blue from Logo */
+  --brand-soft: rgba(11, 69, 200, 0.15);   /* pale blue */
+  --brand-deep: rgb(8, 48, 140);   /* deeper blue */
   --ink: oklch(0.18 0.03 235);         /* deep navy ink */
 
   --background: oklch(0.99 0.005 200);
@@ -53,19 +53,19 @@
   --card-foreground: var(--ink);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--ink);
-  --primary: var(--aqua);
+  --primary: var(--brand);
   --primary-foreground: oklch(1 0 0);  /* changed to white for contrast on deep blue */
-  --secondary: var(--aqua-soft);
+  --secondary: var(--brand-soft);
   --secondary-foreground: var(--ink);
   --muted: oklch(0.96 0.01 210);
   --muted-foreground: oklch(0.5 0.02 235);
-  --accent: var(--aqua-soft);
+  --accent: var(--brand-soft);
   --accent-foreground: var(--ink);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.92 0.02 210);
   --input: oklch(0.92 0.02 210);
-  --ring: var(--aqua);
+  --ring: var(--brand);
 }
 
 @layer base {
@@ -80,14 +80,14 @@
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
-@utility gradient-aqua {
-  background-image: linear-gradient(135deg, oklch(0.88 0.11 195) 0%, oklch(0.75 0.14 210) 100%);
+@utility gradient-brand {
+  background-image: linear-gradient(135deg, oklch(0.96 0.03 260) 0%, oklch(0.92 0.05 260) 100%);
 }
-@utility gradient-aqua-radial {
-  background-image: radial-gradient(ellipse at top, oklch(0.92 0.09 195 / 0.6), transparent 60%);
+@utility gradient-brand-radial {
+  background-image: radial-gradient(ellipse at top, oklch(0.94 0.04 260 / 0.6), transparent 60%);
 }
-@utility text-gradient-aqua {
-  background-image: linear-gradient(90deg, var(--aqua-deep), var(--aqua));
+@utility text-gradient-brand {
+  background-image: linear-gradient(90deg, var(--brand-deep), var(--brand));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
