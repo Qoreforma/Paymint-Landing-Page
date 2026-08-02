@@ -46,7 +46,7 @@ function Security() {
 
       <div className="mt-16 rounded-3xl bg-secondary/40 p-8 text-center border border-border">
         <h3 className="font-semibold text-foreground text-xl">Found a vulnerability?</h3>
-        <p className="text-muted-foreground mt-2">We have a responsible disclosure program. Reach out to <a href="mailto:security@paymint.co" className="text-aqua-deep font-medium hover:underline">security@paymint.co</a>.</p>
+        <p className="text-muted-foreground mt-2">We have a responsible disclosure program. <a href="mailto:paymint485@gmail.com" className="text-aqua-deep font-medium hover:underline">Reach out to our security team</a>.</p>
       </div>
     </div>
   )

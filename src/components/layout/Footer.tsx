@@ -30,7 +30,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><a href="/#refer" className="text-ink/80 transition hover:text-aqua-deep">Refer & Earn</a></li>
             <li><a href="/#refer" className="text-ink/80 transition hover:text-aqua-deep">Partners</a></li>
-            <li><a href="mailto:hello@paymint.co" className="text-ink/80 transition hover:text-aqua-deep">Contact</a></li>
+            <li><a href="mailto:paymint485@gmail.com" className="text-ink/80 transition hover:text-aqua-deep">Contact</a></li>
           </ul>
         </div>
         <div>

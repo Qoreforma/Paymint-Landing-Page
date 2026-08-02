@@ -33,7 +33,7 @@ function PrivacyPolicy() {
 
         <div className="mt-16 rounded-3xl bg-secondary/40 p-8 text-center border border-border">
           <h3 className="font-semibold text-foreground text-xl">Privacy concerns?</h3>
-          <p className="text-muted-foreground mt-2">Contact our Data Protection Officer at <a href="mailto:privacy@paymint.co" className="text-aqua-deep font-medium hover:underline">privacy@paymint.co</a>.</p>
+          <p className="text-muted-foreground mt-2"><a href="mailto:paymint485@gmail.com" className="text-aqua-deep font-medium hover:underline">Contact our Data Protection Officer</a>.</p>
         </div>
       </div>
     </div>
