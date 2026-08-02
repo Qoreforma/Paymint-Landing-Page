@@ -25,13 +25,7 @@ export const Route = createFileRoute("/")({
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymint.app";
 const WEB_APP_URL = "https://app.paymint.co";
 
-function Logo({ className = "" }: { className?: string }) {
-  return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <img src="/logo.png" alt="PayMint Logo" className="h-16 w-auto object-contain" />
-    </div>
-  );
-}
+
 
 function PlayStoreButton() {
   return (
@@ -80,38 +74,7 @@ function DownloadRow() {
   );
 }
 
-function Nav() {
-  return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-lg">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Logo />
-        <nav className="hidden items-center gap-8 md:flex">
-          {[
-            ["Features", "#features"],
-            ["How it works", "#how"],
-            ["Refer & Earn", "#refer"],
-            ["Download", "#download"],
-          ].map(([label, href]) => (
-            <a key={href} href={href} className="text-sm font-medium text-muted-foreground transition hover:text-ink">
-              {label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-2">
-          <a
-            href="#download"
-            className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90 sm:inline-flex"
-          >
-            Get the App
-          </a>
-          <button className="grid h-10 w-10 place-items-center rounded-full border border-border md:hidden" aria-label="Menu">
-            <Menu className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
+
 
 function Hero() {
   return (
@@ -468,75 +431,17 @@ function DownloadCTA() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
-        <div>
-          <Logo />
-          <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            The wallet for airtime, data, eSIMs, electricity, cable TV and every other bill.
-          </p>
-        </div>
-        {[
-          ["Product", [["Features", "#features"], ["How it works", "#how"], ["Download", "#download"]]],
-          ["Company", [["Refer & Earn", "#refer"], ["Partners", "#refer"], ["Contact", "mailto:hello@paymint.co"]]],
-          ["Legal", [["Terms", "#"], ["Privacy", "#"], ["Security", "#"]]],
-        ].map(([title, links]) => (
-          <div key={title as string}>
-            <div className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-              {title as string}
-            </div>
-            <ul className="mt-4 space-y-2 text-sm">
-              {(links as [string, string][]).map(([l, h]) => (
-                <li key={l}>
-                  <a href={h} className="text-ink/80 transition hover:text-aqua-deep">{l}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-1 sm:items-start">
-            <span>© {new Date().getFullYear()} PayMint. All rights reserved.</span>
-            <span className="text-[10px]">
-              Website designed & developed by{" "}
-              <a
-                href="https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium transition-colors hover:text-ink"
-              >
-                Opafunso Oluwaferanmi Benjamin
-              </a>
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="#" aria-label="Twitter" className="hover:text-ink">Twitter</a>
-            <a href="#" aria-label="Instagram" className="hover:text-ink">Instagram</a>
-            <a href="#" aria-label="WhatsApp" className="hover:text-ink">WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
+
 
 function Landing() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Nav />
-      <main>
-        <Hero />
-        <HowItWorks />
-        <Features />
-        <ReferSpotlight />
-        <TrustStrip />
-        <DownloadCTA />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <HowItWorks />
+      <Features />
+      <ReferSpotlight />
+      <TrustStrip />
+      <DownloadCTA />
+    </>
   );
 }
