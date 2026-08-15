@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymint.app";
-const WEB_APP_URL = "https://app.paymint.co";
+const WEB_APP_URL = "https://app.paymint.com.ng";
 
 
 
