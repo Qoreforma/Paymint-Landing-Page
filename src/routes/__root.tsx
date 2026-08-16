@@ -134,6 +134,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 import { Nav } from "../components/layout/Nav";
 import { Footer } from "../components/layout/Footer";
+import { Toaster } from "../components/ui/sonner";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -147,6 +148,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <Toaster richColors position="top-right" />
       </div>
     </QueryClientProvider>
   );

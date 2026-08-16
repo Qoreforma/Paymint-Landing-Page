@@ -25,6 +25,9 @@ export function Nav() {
               {label}
             </a>
           ))}
+          <Link to="/contact" className="text-sm font-medium text-muted-foreground transition hover:text-ink">
+            Contact
+          </Link>
         </nav>
         <div className="flex items-center gap-3">
           <a
@@ -72,6 +75,13 @@ export function Nav() {
                 {label}
               </a>
             ))}
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="text-base font-medium text-muted-foreground transition hover:text-ink"
+            >
+              Contact
+            </Link>
             <div className="pt-4 flex flex-col gap-3">
               <a
                 href={WEB_APP_URL}
