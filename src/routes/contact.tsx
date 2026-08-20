@@ -190,10 +190,10 @@ function ContactPage() {
                   </div>
                   <div>
                     <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Email Support
+                      Send Message
                     </div>
                     <div className="font-medium text-foreground group-hover:text-brand-deep">
-                      paymint485@gmail.com
+                      Email Support
                     </div>
                     <div className="text-xs text-muted-foreground">
                       Typically replies in under 1 hour
@@ -343,7 +343,7 @@ function ContactPage() {
                       <Input
                         id="name"
                         type="text"
-                        placeholder="e.g. Benjamin Opafunso"
+                        placeholder="e.g. John doe"
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
