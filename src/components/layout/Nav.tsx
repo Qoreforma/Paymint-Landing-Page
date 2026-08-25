@@ -4,6 +4,7 @@ import { Menu, X, ExternalLink } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymint.app";
+const APP_STORE_URL = "https://apps.apple.com/us/app/paymint/id6801909031";
 const WEB_APP_URL = "https://app.paymint.com.ng";
 
 export function Nav() {
@@ -40,9 +41,7 @@ export function Nav() {
             <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
           </a>
           <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/#download"
             className="hidden rounded-full bg-ink px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90 sm:inline-flex"
           >
             Get the App
@@ -94,13 +93,22 @@ export function Nav() {
                 <ExternalLink className="h-4 w-4 text-muted-foreground" />
               </a>
               <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center rounded-xl bg-ink py-3 text-sm font-semibold text-white transition hover:opacity-90"
+              >
+                Get the App (iOS)
+              </a>
+              <a
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center rounded-xl bg-ink py-3 text-sm font-semibold text-white transition hover:opacity-90"
               >
-                Get the App (Google Play)
+                Get the App (Android)
               </a>
             </div>
           </nav>

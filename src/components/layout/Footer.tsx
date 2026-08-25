@@ -21,6 +21,7 @@ export function Footer() {
             <li><a href="/#features" className="text-ink/80 transition hover:text-brand-deep">Features</a></li>
             <li><a href="/#how" className="text-ink/80 transition hover:text-brand-deep">How it works</a></li>
             <li><a href="https://app.paymint.com.ng" target="_blank" rel="noopener noreferrer" className="text-ink/80 transition hover:text-brand-deep">Web App</a></li>
+            <li><a href="https://apps.apple.com/us/app/paymint/id6801909031" target="_blank" rel="noopener noreferrer" className="text-ink/80 transition hover:text-brand-deep">App Store</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.paymint.app" target="_blank" rel="noopener noreferrer" className="text-ink/80 transition hover:text-brand-deep">Google Play</a></li>
           </ul>
         </div>

@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymint.app";
+const APP_STORE_URL = "https://apps.apple.com/us/app/paymint/id6801909031";
 const WEB_APP_URL = "https://app.paymint.com.ng";
 
 
@@ -41,6 +42,25 @@ function PlayStoreButton() {
       <div className="text-left leading-tight">
         <div className="text-[10px] uppercase tracking-wider opacity-70">Get it on</div>
         <div className="font-display text-lg font-semibold">Google Play</div>
+      </div>
+    </a>
+  );
+}
+
+function AppStoreButton() {
+  return (
+    <a
+      href={APP_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-center gap-3 rounded-2xl bg-ink px-5 py-3 text-white transition hover:opacity-90"
+    >
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden>
+        <path d="M16.365 14.363c-.021-3.155 2.568-4.664 2.686-4.74-1.465-2.145-3.738-2.435-4.549-2.464-1.921-.194-3.754 1.134-4.733 1.134-.977 0-2.5-1.109-4.088-1.077-2.072.031-3.985 1.206-5.048 3.057-2.146 3.722-.549 9.215 1.545 12.247 1.026 1.485 2.235 3.155 3.842 3.093 1.543-.062 2.133-1.002 4.004-1.002 1.869 0 2.401 1.002 4.004.97 1.666-.03 2.697-1.485 3.723-2.969 1.183-1.733 1.671-3.411 1.692-3.497-.037-.014-3.057-1.173-3.078-4.753zm-3.094-8.835c.846-1.026 1.417-2.451 1.261-3.876-1.218.05-2.709.813-3.587 1.838-.787.896-1.468 2.348-1.291 3.752 1.365.105 2.771-.685 3.617-1.714z" />
+      </svg>
+      <div className="text-left leading-tight">
+        <div className="text-[10px] uppercase tracking-wider opacity-70">Download on the</div>
+        <div className="font-display text-lg font-semibold">App Store</div>
       </div>
     </a>
   );
@@ -68,6 +88,7 @@ function WebButton() {
 function DownloadRow() {
   return (
     <div className="flex flex-wrap items-center gap-3">
+      <AppStoreButton />
       <PlayStoreButton />
       <WebButton />
     </div>
@@ -412,7 +433,7 @@ function DownloadCTA() {
               One wallet. Every bill.<br />Ready when you are.
             </h2>
             <p className="mt-4 max-w-xl text-ink/80">
-              Download PayMint on Android, or hop on the web app right now. iOS is on the way.
+              Download PayMint on iOS or Android, or hop on the web app right now.
             </p>
             <div className="mt-8">
               <DownloadRow />
