@@ -9,7 +9,30 @@ export default defineConfig({
   plugins: [
     tanstackStart(),
     nitro({
-      preset: "vercel"
+      preset: "vercel",
+      routeRules: {
+        "/.well-known/apple-app-site-association": {
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=3600",
+            "Access-Control-Allow-Origin": "*"
+          }
+        },
+        "/apple-app-site-association": {
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=3600",
+            "Access-Control-Allow-Origin": "*"
+          }
+        },
+        "/.well-known/assetlinks.json": {
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=3600",
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      }
     }),
     react(),
     tailwindcss(),
