@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DGeXAQPT.js";import{t}from"./InviteHandler-j_EWwR7e.js";import{t as n}from"./invite.index-Bnbvd7Xr.js";var r=e();function i(){let e=n.useSearch();return(0,r.jsx)(t,{referralCode:e.code||e.referrer||e.ref||``})}export{i as component};

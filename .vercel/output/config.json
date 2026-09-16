@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "framework": {
+    "name": "nitro",
+    "version": "3.0.260603-beta"
+  },
+  "overrides": {},
+  "routes": [
+    {
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "public, max-age=3600",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "src": "/.well-known/apple-app-site-association"
+    },
+    {
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "public, max-age=3600",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "src": "/.well-known/assetlinks.json"
+    },
+    {
+      "headers": {
+        "Content-Type": "application/json",
+        "Cache-Control": "public, max-age=3600",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "src": "/apple-app-site-association"
+    },
+    {
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "src": "/assets/(.*)"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/__server"
+    }
+  ]
+}
