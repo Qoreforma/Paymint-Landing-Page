@@ -1,6 +1,25 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/terms')({
+  head: () => ({
+    meta: [
+      { title: "Terms of Service — PayMint" },
+      {
+        name: "description",
+        content:
+          "Read the official Terms of Service governing your PayMint wallet, virtual accounts, and bill payment services.",
+      },
+      { property: "og:title", content: "Terms of Service — PayMint" },
+      {
+        property: "og:description",
+        content:
+          "Official Terms of Service for using the PayMint app, wallet, and bill payment platform.",
+      },
+      { property: "og:url", content: "https://paymint.com.ng/terms" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://paymint.com.ng/terms" }],
+  }),
   component: Terms,
 })
 

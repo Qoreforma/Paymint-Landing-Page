@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-Deq_XFG-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CIC0A4cm.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/USER/Documents/React Projects/Qoreforma/paymint/paymint-landing-page/src/routes/__root.tsx",
@@ -12,7 +12,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/invite/"
 		],
 		preloads: [
-			"/assets/index-DveYem6T.js",
+			"/assets/index-CcSnkE-O.js",
 			"/assets/jsx-runtime-DGeXAQPT.js",
 			"/assets/createLucideIcon-BTloDLYt.js",
 			"/assets/dist-DGT0fjbm.js",
@@ -23,7 +23,7 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-DveYem6T.js"
+			src: "/assets/index-CcSnkE-O.js"
 		} }]
 	},
 	"/": {

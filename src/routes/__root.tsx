@@ -72,26 +72,59 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
       { title: "PayMint — Fund your wallet. Pay every bill. Instantly." },
-      { name: "description", content: "PayMint is the mobile-first wallet for airtime, data, eSIMs, electricity, cable TV and more. Fund via virtual account and pay bills in seconds — even from WhatsApp." },
-      { name: "author", content: "Opafunso Oluwaferanmi Benjamin" },
-      { name: "creator", content: "Opafunso Oluwaferanmi Benjamin" },
-      { name: "designer", content: "Opafunso Oluwaferanmi Benjamin" },
+      {
+        name: "description",
+        content:
+          "PayMint is Nigeria's mobile-first wallet for airtime, cheap data bundles, electricity tokens, cable TV, and global travel eSIMs. Fund via instant virtual accounts.",
+      },
+      {
+        name: "keywords",
+        content:
+          "PayMint, buy data online, cheap data bundle nigeria, airtime recharge, electricity token, dstv subscription, gotv, startimes, virtual account nigeria, travel esim, fintech nigeria, pay bills whatsapp",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "author", content: "PayMint" },
       { name: "publisher", content: "PayMint" },
-      { property: "og:title", content: "PayMint — Fund your wallet. Pay every bill." },
-      { property: "og:description", content: "One wallet for airtime, data, eSIMs, electricity, cable TV and bills. Pay from the app or straight from WhatsApp." },
+      { name: "application-name", content: "PayMint" },
+      { name: "apple-mobile-web-app-title", content: "PayMint" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "theme-color", content: "#00C37B" },
+      { property: "og:site_name", content: "PayMint" },
+      { property: "og:title", content: "PayMint — Fund your wallet. Pay every bill. Instantly." },
+      {
+        property: "og:description",
+        content:
+          "One wallet for airtime, cheap data, electricity, cable TV, and travel eSIMs. Fund via instant virtual account and pay in seconds.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://paymint.com.ng" },
+      { property: "og:locale", content: "en_NG" },
+      { property: "og:image", content: "https://paymint.com.ng/logo.png" },
+      { property: "og:image:alt", content: "PayMint — Fund your wallet. Pay every bill." },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "PayMint — Fund your wallet. Pay every bill." },
-      { name: "twitter:description", content: "One wallet for every bill. Pay from the app or from WhatsApp." },
+      {
+        name: "twitter:description",
+        content:
+          "One wallet for airtime, data, electricity, cable TV, and eSIMs. Pay from the mobile app or web.",
+      },
+      { name: "twitter:image", content: "https://paymint.com.ng/logo.png" },
     ],
     links: [
+      { rel: "canonical", href: "https://paymint.com.ng" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
+      },
       { rel: "icon", href: "/favicon.jpeg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/favicon.jpeg" },
     ],
   }),
 
@@ -104,14 +137,51 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "PayMint",
-    "url": "https://paymint.co",
-    "creator": {
-      "@type": "Person",
-      "name": "Opafunso Oluwaferanmi Benjamin",
-      "url": "https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://paymint.com.ng/#organization",
+        "name": "PayMint",
+        "url": "https://paymint.com.ng",
+        "logo": "https://paymint.com.ng/logo.png",
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.paymint.app",
+          "https://apps.apple.com/us/app/paymint/id6801909031",
+          "https://app.paymint.com.ng"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "paymint485@gmail.com",
+          "contactType": "customer support",
+          "areaServed": "NG",
+          "availableLanguage": ["en"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://paymint.com.ng/#website",
+        "name": "PayMint",
+        "url": "https://paymint.com.ng",
+        "publisher": {
+          "@id": "https://paymint.com.ng/#organization"
+        },
+        "description": "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://paymint.com.ng/#app",
+        "name": "PayMint",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Android, iOS, Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "NGN"
+        },
+        "installUrl": "https://play.google.com/store/apps/details?id=com.paymint.app",
+        "downloadUrl": "https://apps.apple.com/us/app/paymint/id6801909031"
+      }
+    ]
   };
 
   return (
@@ -124,7 +194,6 @@ function RootShell({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <div dangerouslySetInnerHTML={{ __html: '<!-- Website designed & developed by Opafunso Oluwaferanmi Benjamin - https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share -->' }} style={{ display: 'none' }} />
         {children}
         <Scripts />
       </body>

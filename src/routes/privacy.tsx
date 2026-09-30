@@ -1,6 +1,25 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/privacy')({
+  head: () => ({
+    meta: [
+      { title: "Privacy Policy — PayMint" },
+      {
+        name: "description",
+        content:
+          "Read PayMint's Privacy Policy. Learn how we handle your personal data, transaction history, and privacy in compliance with NDPR regulations.",
+      },
+      { property: "og:title", content: "Privacy Policy — PayMint" },
+      {
+        property: "og:description",
+        content:
+          "PayMint's Privacy Policy explaining how we collect, store, and protect your personal information.",
+      },
+      { property: "og:url", content: "https://paymint.com.ng/privacy" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://paymint.com.ng/privacy" }],
+  }),
   component: PrivacyPolicy,
 })
 

@@ -2,6 +2,25 @@ import { createFileRoute } from '@tanstack/react-router'
 import { ShieldCheck, Lock, Server } from 'lucide-react'
 
 export const Route = createFileRoute('/security')({
+  head: () => ({
+    meta: [
+      { title: "Security & Compliance — PayMint" },
+      {
+        name: "description",
+        content:
+          "Learn how PayMint protects your financial data and transactions with bank-grade 256-bit encryption, two-factor authentication, and NDPR compliance.",
+      },
+      { property: "og:title", content: "Security & Compliance — PayMint" },
+      {
+        property: "og:description",
+        content:
+          "Bank-level 256-bit encryption and security standards protecting your wallet and payments.",
+      },
+      { property: "og:url", content: "https://paymint.com.ng/security" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://paymint.com.ng/security" }],
+  }),
   component: Security,
 })
 

@@ -8,7 +8,7 @@ import { t as Route$6 } from "./invite._code-0eYXuLJx.mjs";
 import { t as Route$7 } from "./invite.index-CvIeP2pn.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-ClZqFQNu.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DeNea41i.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-BK4LjT6n.css";
@@ -366,40 +366,84 @@ var Route$5 = createRootRouteWithContext()({
 			{ charSet: "utf-8" },
 			{
 				name: "viewport",
-				content: "width=device-width, initial-scale=1"
+				content: "width=device-width, initial-scale=1, maximum-scale=5"
 			},
 			{ title: "PayMint — Fund your wallet. Pay every bill. Instantly." },
 			{
 				name: "description",
-				content: "PayMint is the mobile-first wallet for airtime, data, eSIMs, electricity, cable TV and more. Fund via virtual account and pay bills in seconds — even from WhatsApp."
+				content: "PayMint is Nigeria's mobile-first wallet for airtime, cheap data bundles, electricity tokens, cable TV, and global travel eSIMs. Fund via instant virtual accounts."
+			},
+			{
+				name: "keywords",
+				content: "PayMint, buy data online, cheap data bundle nigeria, airtime recharge, electricity token, dstv subscription, gotv, startimes, virtual account nigeria, travel esim, fintech nigeria, pay bills whatsapp"
+			},
+			{
+				name: "robots",
+				content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+			},
+			{
+				name: "googlebot",
+				content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 			},
 			{
 				name: "author",
-				content: "Opafunso Oluwaferanmi Benjamin"
-			},
-			{
-				name: "creator",
-				content: "Opafunso Oluwaferanmi Benjamin"
-			},
-			{
-				name: "designer",
-				content: "Opafunso Oluwaferanmi Benjamin"
+				content: "PayMint"
 			},
 			{
 				name: "publisher",
 				content: "PayMint"
 			},
 			{
+				name: "application-name",
+				content: "PayMint"
+			},
+			{
+				name: "apple-mobile-web-app-title",
+				content: "PayMint"
+			},
+			{
+				name: "apple-mobile-web-app-capable",
+				content: "yes"
+			},
+			{
+				name: "apple-mobile-web-app-status-bar-style",
+				content: "default"
+			},
+			{
+				name: "theme-color",
+				content: "#00C37B"
+			},
+			{
+				property: "og:site_name",
+				content: "PayMint"
+			},
+			{
 				property: "og:title",
-				content: "PayMint — Fund your wallet. Pay every bill."
+				content: "PayMint — Fund your wallet. Pay every bill. Instantly."
 			},
 			{
 				property: "og:description",
-				content: "One wallet for airtime, data, eSIMs, electricity, cable TV and bills. Pay from the app or straight from WhatsApp."
+				content: "One wallet for airtime, cheap data, electricity, cable TV, and travel eSIMs. Fund via instant virtual account and pay in seconds."
 			},
 			{
 				property: "og:type",
 				content: "website"
+			},
+			{
+				property: "og:url",
+				content: "https://paymint.com.ng"
+			},
+			{
+				property: "og:locale",
+				content: "en_NG"
+			},
+			{
+				property: "og:image",
+				content: "https://paymint.com.ng/logo.png"
+			},
+			{
+				property: "og:image:alt",
+				content: "PayMint — Fund your wallet. Pay every bill."
 			},
 			{
 				name: "twitter:card",
@@ -411,10 +455,18 @@ var Route$5 = createRootRouteWithContext()({
 			},
 			{
 				name: "twitter:description",
-				content: "One wallet for every bill. Pay from the app or from WhatsApp."
+				content: "One wallet for airtime, data, electricity, cable TV, and eSIMs. Pay from the mobile app or web."
+			},
+			{
+				name: "twitter:image",
+				content: "https://paymint.com.ng/logo.png"
 			}
 		],
 		links: [
+			{
+				rel: "canonical",
+				href: "https://paymint.com.ng"
+			},
 			{
 				rel: "stylesheet",
 				href: styles_default
@@ -436,6 +488,10 @@ var Route$5 = createRootRouteWithContext()({
 				rel: "icon",
 				href: "/favicon.jpeg",
 				type: "image/jpeg"
+			},
+			{
+				rel: "apple-touch-icon",
+				href: "/favicon.jpeg"
 			}
 		]
 	}),
@@ -451,23 +507,51 @@ function RootShell({ children }) {
 			type: "application/ld+json",
 			dangerouslySetInnerHTML: { __html: JSON.stringify({
 				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "PayMint",
-				"url": "https://paymint.co",
-				"creator": {
-					"@type": "Person",
-					"name": "Opafunso Oluwaferanmi Benjamin",
-					"url": "https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share"
-				}
+				"@graph": [
+					{
+						"@type": "Organization",
+						"@id": "https://paymint.com.ng/#organization",
+						"name": "PayMint",
+						"url": "https://paymint.com.ng",
+						"logo": "https://paymint.com.ng/logo.png",
+						"sameAs": [
+							"https://play.google.com/store/apps/details?id=com.paymint.app",
+							"https://apps.apple.com/us/app/paymint/id6801909031",
+							"https://app.paymint.com.ng"
+						],
+						"contactPoint": {
+							"@type": "ContactPoint",
+							"email": "paymint485@gmail.com",
+							"contactType": "customer support",
+							"areaServed": "NG",
+							"availableLanguage": ["en"]
+						}
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://paymint.com.ng/#website",
+						"name": "PayMint",
+						"url": "https://paymint.com.ng",
+						"publisher": { "@id": "https://paymint.com.ng/#organization" },
+						"description": "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria."
+					},
+					{
+						"@type": "SoftwareApplication",
+						"@id": "https://paymint.com.ng/#app",
+						"name": "PayMint",
+						"applicationCategory": "FinanceApplication",
+						"operatingSystem": "Android, iOS, Web",
+						"offers": {
+							"@type": "Offer",
+							"price": "0",
+							"priceCurrency": "NGN"
+						},
+						"installUrl": "https://play.google.com/store/apps/details?id=com.paymint.app",
+						"downloadUrl": "https://apps.apple.com/us/app/paymint/id6801909031"
+					}
+				]
 			}) }
-		})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				dangerouslySetInnerHTML: { __html: "<!-- Website designed & developed by Opafunso Oluwaferanmi Benjamin - https://www.upwork.com/freelancers/~01700c62beb4fd95f1?mp_source=share -->" },
-				style: { display: "none" }
-			}),
-			children,
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})
-		] })]
+		})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
 	});
 }
 function RootComponent() {
@@ -492,28 +576,135 @@ function RootComponent() {
 	});
 }
 var $$splitComponentImporter$4 = () => import("./terms-BzI3vjJH.mjs");
-var Route$4 = createFileRoute("/terms")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
+var Route$4 = createFileRoute("/terms")({
+	head: () => ({
+		meta: [
+			{ title: "Terms of Service — PayMint" },
+			{
+				name: "description",
+				content: "Read the official Terms of Service governing your PayMint wallet, virtual accounts, and bill payment services."
+			},
+			{
+				property: "og:title",
+				content: "Terms of Service — PayMint"
+			},
+			{
+				property: "og:description",
+				content: "Official Terms of Service for using the PayMint app, wallet, and bill payment platform."
+			},
+			{
+				property: "og:url",
+				content: "https://paymint.com.ng/terms"
+			},
+			{
+				property: "og:type",
+				content: "website"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "https://paymint.com.ng/terms"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$4, "component")
+});
 var $$splitComponentImporter$3 = () => import("./security-DHdXy5BX.mjs");
-var Route$3 = createFileRoute("/security")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
+var Route$3 = createFileRoute("/security")({
+	head: () => ({
+		meta: [
+			{ title: "Security & Compliance — PayMint" },
+			{
+				name: "description",
+				content: "Learn how PayMint protects your financial data and transactions with bank-grade 256-bit encryption, two-factor authentication, and NDPR compliance."
+			},
+			{
+				property: "og:title",
+				content: "Security & Compliance — PayMint"
+			},
+			{
+				property: "og:description",
+				content: "Bank-level 256-bit encryption and security standards protecting your wallet and payments."
+			},
+			{
+				property: "og:url",
+				content: "https://paymint.com.ng/security"
+			},
+			{
+				property: "og:type",
+				content: "website"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "https://paymint.com.ng/security"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$3, "component")
+});
 var $$splitComponentImporter$2 = () => import("./privacy-26G59L9m.mjs");
-var Route$2 = createFileRoute("/privacy")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
+var Route$2 = createFileRoute("/privacy")({
+	head: () => ({
+		meta: [
+			{ title: "Privacy Policy — PayMint" },
+			{
+				name: "description",
+				content: "Read PayMint's Privacy Policy. Learn how we handle your personal data, transaction history, and privacy in compliance with NDPR regulations."
+			},
+			{
+				property: "og:title",
+				content: "Privacy Policy — PayMint"
+			},
+			{
+				property: "og:description",
+				content: "PayMint's Privacy Policy explaining how we collect, store, and protect your personal information."
+			},
+			{
+				property: "og:url",
+				content: "https://paymint.com.ng/privacy"
+			},
+			{
+				property: "og:type",
+				content: "website"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "https://paymint.com.ng/privacy"
+		}]
+	}),
+	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
 var $$splitComponentImporter$1 = () => import("./contact-C9fXJqbP.mjs");
 var Route$1 = createFileRoute("/contact")({
-	head: () => ({ meta: [
-		{ title: "Contact Us — PayMint Support & Enquiries" },
-		{
-			name: "description",
-			content: "Have questions or need assistance? Get in touch with the PayMint support and partnership team. We're here to help 24/7."
-		},
-		{
-			property: "og:title",
-			content: "Contact Us — PayMint"
-		},
-		{
-			property: "og:description",
-			content: "Reach out to the PayMint support team for any questions or transaction assistance."
-		}
-	] }),
+	head: () => ({
+		meta: [
+			{ title: "Contact Us — PayMint Support & Enquiries" },
+			{
+				name: "description",
+				content: "Have questions or need assistance? Get in touch with the PayMint support and partnership team. We're here to help 24/7."
+			},
+			{
+				property: "og:title",
+				content: "Contact Us — PayMint"
+			},
+			{
+				property: "og:description",
+				content: "Reach out to the PayMint support team for any questions or transaction assistance."
+			},
+			{
+				property: "og:url",
+				content: "https://paymint.com.ng/contact"
+			},
+			{
+				property: "og:type",
+				content: "website"
+			}
+		],
+		links: [{
+			rel: "canonical",
+			href: "https://paymint.com.ng/contact"
+		}]
+	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
 var $$splitComponentImporter = () => import("./routes-BpHuLRcp.mjs");
