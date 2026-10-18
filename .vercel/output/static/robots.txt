@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /invite/
-
-# Host
-Host: https://paymint.com.ng
-
-# Sitemaps
-Sitemap: https://paymint.com.ng/sitemap.xml
