@@ -64,6 +64,49 @@ export const Route = createFileRoute("/download")({
   component: DownloadPage,
 });
 
+function detectClientPlatform(): "android" | "ios" | "desktop" {
+  if (typeof window === "undefined") return "desktop";
+
+  const ua = navigator.userAgent || "";
+  const platform = navigator.platform || "";
+  const maxTouch = navigator.maxTouchPoints || 0;
+  const isCoarsePointer =
+    typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches;
+  const smallScreen = Math.min(window.screen.width, window.screen.height) <= 1024;
+
+  // 1. Explicit mobile User-Agents
+  if (/android/i.test(ua)) return "android";
+  if (/iPad|iPhone|iPod/i.test(ua)) return "ios";
+
+  // 2. iOS Desktop Site Mode: Safari / Chrome on iOS reports "MacIntel" with touch points
+  if (platform === "MacIntel" && maxTouch > 1) {
+    return "ios";
+  }
+
+  // 3. Android Desktop Site Mode:
+  // Chrome on Android in "Desktop site" mode spoofing X11/Linux, but with touchscreen & mobile screen
+  const isTouchMobile = (maxTouch > 1 || isCoarsePointer) && smallScreen;
+  if (isTouchMobile) {
+    const navUA = navigator as Navigator & {
+      userAgentData?: { platform?: string };
+    };
+    const uaDataPlatform = (navUA.userAgentData?.platform || "").toLowerCase();
+    if (uaDataPlatform === "android") {
+      return "android";
+    }
+
+    if (/linux/i.test(platform) || /x11|linux/i.test(ua)) {
+      return "android";
+    }
+
+    if (platform !== "MacIntel" && !/macintosh|mac os x/i.test(ua)) {
+      return "android";
+    }
+  }
+
+  return "desktop";
+}
+
 function DownloadPage() {
   const search = Route.useSearch();
   const [platform, setPlatform] = useState<"android" | "ios" | "desktop">("desktop");
@@ -89,32 +132,21 @@ function DownloadPage() {
     return PLAY_STORE_BASE;
   }, [search]);
 
-  // Client-side detection & SPA fallback redirection
+  // Client-side detection & SPA / Desktop-mode fallback redirection
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const ua = navigator.userAgent || "";
-    const isIOSDevice =
-      /iPad|iPhone|iPod/.test(ua) ||
-      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    const isAndroidDevice = /android/i.test(ua);
+    const detected = detectClientPlatform();
+    setPlatform(detected);
 
-    if (isAndroidDevice) {
-      setPlatform("android");
-    } else if (isIOSDevice) {
-      setPlatform("ios");
-    } else {
-      setPlatform("desktop");
-    }
-
-    // If store=1 is specified (e.g. via client-side routing fallback)
+    // If store=1 is specified:
     const shouldRedirect = search.store === "1" || search.store === "true" || search.auto === "1";
 
     if (shouldRedirect) {
-      if (isAndroidDevice) {
+      if (detected === "android") {
         setIsRedirecting(true);
         window.location.href = playStoreUrl;
-      } else if (isIOSDevice) {
+      } else if (detected === "ios") {
         setIsRedirecting(true);
         window.location.href = APP_STORE_URL;
       }

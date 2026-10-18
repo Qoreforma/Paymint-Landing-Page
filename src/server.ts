@@ -99,9 +99,10 @@ function handleSmartDownload(request: Request): Response | null {
   }
 
   const ua = (request.headers.get("user-agent") || "").toLowerCase();
+  const secPlatform = (request.headers.get("sec-ch-ua-platform") || "").toLowerCase();
 
-  // Android device detection
-  if (ua.includes("android")) {
+  // Android device detection (User-Agent or Sec-CH-UA-Platform Client Hint)
+  if (ua.includes("android") || secPlatform.includes("android")) {
     return new Response(null, {
       status: 302,
       headers: {
@@ -111,8 +112,13 @@ function handleSmartDownload(request: Request): Response | null {
     });
   }
 
-  // iOS device detection (iPhone, iPad, iPod)
-  if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod")) {
+  // iOS device detection (iPhone, iPad, iPod, or iOS Client Hint)
+  if (
+    ua.includes("iphone") ||
+    ua.includes("ipad") ||
+    ua.includes("ipod") ||
+    secPlatform.includes("ios")
+  ) {
     return new Response(null, {
       status: 302,
       headers: {
@@ -122,20 +128,11 @@ function handleSmartDownload(request: Request): Response | null {
     });
   }
 
-  // Desktop / unknown device:
-  // Strip store query parameter to avoid looping and redirect to the clean /download landing page
-  const cleanUrl = new URL(request.url);
-  cleanUrl.searchParams.delete("store");
-  cleanUrl.searchParams.delete("auto");
-  cleanUrl.searchParams.delete("redirect");
-
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: cleanUrl.toString(),
-      "Cache-Control": "no-store, no-cache, must-revalidate",
-    },
-  });
+  // Desktop or mobile phone in desktop mode:
+  // Return null to allow SSR page to render while preserving ?store=1 in query params.
+  // The client-side React component will inspect touch points, pointer type, and screen
+  // dimensions to catch mobile phones in desktop mode and redirect them automatically.
+  return null;
 }
 
 export default {
