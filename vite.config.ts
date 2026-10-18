@@ -15,24 +15,24 @@ export default defineConfig({
           headers: {
             "Content-Type": "application/json",
             "Cache-Control": "public, max-age=3600",
-            "Access-Control-Allow-Origin": "*"
-          }
+            "Access-Control-Allow-Origin": "*",
+          },
         },
         "/apple-app-site-association": {
           headers: {
             "Content-Type": "application/json",
             "Cache-Control": "public, max-age=3600",
-            "Access-Control-Allow-Origin": "*"
-          }
+            "Access-Control-Allow-Origin": "*",
+          },
         },
         "/.well-known/assetlinks.json": {
           headers: {
             "Content-Type": "application/json",
             "Cache-Control": "public, max-age=3600",
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
-      }
+            "Access-Control-Allow-Origin": "*",
+          },
+        },
+      },
     }),
     react(),
     tailwindcss(),

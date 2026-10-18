@@ -1,5 +1,5 @@
 import { i as require_jsx_runtime } from "../_libs/@radix-ui/react-label+[...].mjs";
-import { D as BadgeCheck, E as Check, O as ArrowRight, a as Tv, g as Lock, i as Wallet, l as ShieldCheck, o as Sparkles, p as MessageCircle, r as Wifi, s as Smartphone, t as Zap, v as Globe, y as Gift } from "../_libs/lucide-react.mjs";
+import { A as Check, C as Gift, M as ArrowRight, S as Globe, a as Tv, c as Smartphone, g as MessageCircle, i as Wallet, j as BadgeCheck, r as Wifi, s as Sparkles, t as Zap, u as ShieldCheck, y as Lock } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/routes-BpHuLRcp.js
 var import_jsx_runtime = require_jsx_runtime();
 var phoneImage_default = "/assets/phoneImage-2gxWy4wg.png";

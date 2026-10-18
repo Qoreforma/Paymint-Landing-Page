@@ -53,7 +53,7 @@ function renderErrorPage() {
 }
 var serverEntryPromise;
 async function getServerEntry() {
-	if (!serverEntryPromise) serverEntryPromise = import("./server-dj2kog8M.mjs").then((m) => m.default ?? m);
+	if (!serverEntryPromise) serverEntryPromise = import("./server-Os7CnDDe.mjs").then((m) => m.default ?? m);
 	return serverEntryPromise;
 }
 async function normalizeCatastrophicSsrResponse(response) {
@@ -75,8 +75,68 @@ function isH3SwallowedErrorBody(body) {
 		return false;
 	}
 }
+var PLAY_STORE_BASE = "https://play.google.com/store/apps/details?id=com.paymint.app";
+var APP_STORE_URL = "https://apps.apple.com/us/app/paymint/id6801909031";
+function buildPlayStoreUrl(searchParams) {
+	const explicitReferrer = searchParams.get("referrer");
+	if (explicitReferrer) return `${PLAY_STORE_BASE}&referrer=${encodeURIComponent(explicitReferrer)}`;
+	const refCode = searchParams.get("ref") || searchParams.get("code");
+	const utmKeys = [
+		"utm_source",
+		"utm_medium",
+		"utm_campaign",
+		"utm_content",
+		"utm_term",
+		"src"
+	];
+	const utmParts = [];
+	for (const key of utmKeys) {
+		const val = searchParams.get(key);
+		if (val) utmParts.push(`${encodeURIComponent(key)}=${encodeURIComponent(val)}`);
+	}
+	if (refCode) utmParts.push(`referrer_code=${encodeURIComponent(refCode.trim().toUpperCase())}`);
+	if (utmParts.length > 0) {
+		const referrerValue = utmParts.join("&");
+		return `${PLAY_STORE_BASE}&referrer=${encodeURIComponent(referrerValue)}`;
+	}
+	return PLAY_STORE_BASE;
+}
+function handleSmartDownload(request) {
+	const url = new URL(request.url);
+	if ((url.pathname.replace(/\/+$/, "") || "/") !== "/download") return null;
+	const storeParam = url.searchParams.get("store");
+	if (!(storeParam === "1" || storeParam === "true" || url.searchParams.get("auto") === "1" || url.searchParams.get("redirect") === "1")) return null;
+	const ua = (request.headers.get("user-agent") || "").toLowerCase();
+	if (ua.includes("android")) return new Response(null, {
+		status: 302,
+		headers: {
+			Location: buildPlayStoreUrl(url.searchParams),
+			"Cache-Control": "no-store, no-cache, must-revalidate"
+		}
+	});
+	if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod")) return new Response(null, {
+		status: 302,
+		headers: {
+			Location: APP_STORE_URL,
+			"Cache-Control": "no-store, no-cache, must-revalidate"
+		}
+	});
+	const cleanUrl = new URL(request.url);
+	cleanUrl.searchParams.delete("store");
+	cleanUrl.searchParams.delete("auto");
+	cleanUrl.searchParams.delete("redirect");
+	return new Response(null, {
+		status: 302,
+		headers: {
+			Location: cleanUrl.toString(),
+			"Cache-Control": "no-store, no-cache, must-revalidate"
+		}
+	});
+}
 var server_default = { async fetch(request, env, ctx) {
 	try {
+		const redirectResponse = handleSmartDownload(request);
+		if (redirectResponse) return redirectResponse;
 		return await normalizeCatastrophicSsrResponse(await (await getServerEntry()).fetch(request, env, ctx));
 	} catch (error) {
 		console.error(error);

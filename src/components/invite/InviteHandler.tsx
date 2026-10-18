@@ -152,7 +152,11 @@ export function InviteHandler({ referralCode = "" }: InviteHandlerProps) {
         <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md mx-auto">
           {cleanCode ? (
             <>
-              Your invite code <strong className="text-foreground font-mono bg-secondary/80 px-2 py-0.5 rounded">{cleanCode}</strong> is attached and will be automatically applied when you open PayMint.
+              Your invite code{" "}
+              <strong className="text-foreground font-mono bg-secondary/80 px-2 py-0.5 rounded">
+                {cleanCode}
+              </strong>{" "}
+              is attached and will be automatically applied when you open PayMint.
             </>
           ) : (
             "Connecting you to the official PayMint app on your device store."
@@ -203,7 +207,8 @@ export function InviteHandler({ referralCode = "" }: InviteHandlerProps) {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-          Fund your wallet, buy airtime, cheap data, utility bills, and trade crypto at industry-best rates with instant Naira settlements.
+          Fund your wallet, buy airtime, cheap data, utility bills, and trade crypto at
+          industry-best rates with instant Naira settlements.
         </p>
       </div>
 
@@ -239,7 +244,8 @@ export function InviteHandler({ referralCode = "" }: InviteHandlerProps) {
           </div>
 
           <p className="mt-3 text-xs text-muted-foreground">
-            This code will be automatically detected when you install PayMint through the mobile download buttons below.
+            This code will be automatically detected when you install PayMint through the mobile
+            download buttons below.
           </p>
         </div>
       )}
@@ -296,7 +302,9 @@ export function InviteHandler({ referralCode = "" }: InviteHandlerProps) {
               <ExternalLink className="h-4 w-4 text-brand-deep" />
             </div>
             <div className="text-left leading-tight">
-              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Continue on</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                Continue on
+              </div>
               <div className="font-display text-lg font-semibold">Web App</div>
             </div>
           </a>

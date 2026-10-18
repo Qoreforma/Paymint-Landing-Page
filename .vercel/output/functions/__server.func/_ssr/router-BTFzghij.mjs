@@ -2,16 +2,17 @@ import { r as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { i as require_jsx_runtime } from "../_libs/@radix-ui/react-label+[...].mjs";
-import { b as ExternalLink, m as Menu, n as X } from "../_libs/lucide-react.mjs";
+import { _ as Menu, n as X, w as ExternalLink } from "../_libs/lucide-react.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-import { t as Route$6 } from "./invite._code-0eYXuLJx.mjs";
-import { t as Route$7 } from "./invite.index-CvIeP2pn.mjs";
+import { t as Route$6 } from "./download-BgcV_wsH.mjs";
+import { t as Route$7 } from "./invite._code-BNpaZS-X.mjs";
+import { t as Route$8 } from "./invite.index-BGbBUVU4.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DeNea41i.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BTFzghij.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-BK4LjT6n.css";
+var styles_default = "/assets/styles-CAWdcguW.css";
 function Logo({ className = "" }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: `flex items-center gap-2 ${className}`,
@@ -511,43 +512,43 @@ function RootShell({ children }) {
 					{
 						"@type": "Organization",
 						"@id": "https://paymint.com.ng/#organization",
-						"name": "PayMint",
-						"url": "https://paymint.com.ng",
-						"logo": "https://paymint.com.ng/logo.png",
-						"sameAs": [
+						name: "PayMint",
+						url: "https://paymint.com.ng",
+						logo: "https://paymint.com.ng/logo.png",
+						sameAs: [
 							"https://play.google.com/store/apps/details?id=com.paymint.app",
 							"https://apps.apple.com/us/app/paymint/id6801909031",
 							"https://app.paymint.com.ng"
 						],
-						"contactPoint": {
+						contactPoint: {
 							"@type": "ContactPoint",
-							"email": "paymint485@gmail.com",
-							"contactType": "customer support",
-							"areaServed": "NG",
-							"availableLanguage": ["en"]
+							email: "paymint485@gmail.com",
+							contactType: "customer support",
+							areaServed: "NG",
+							availableLanguage: ["en"]
 						}
 					},
 					{
 						"@type": "WebSite",
 						"@id": "https://paymint.com.ng/#website",
-						"name": "PayMint",
-						"url": "https://paymint.com.ng",
-						"publisher": { "@id": "https://paymint.com.ng/#organization" },
-						"description": "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria."
+						name: "PayMint",
+						url: "https://paymint.com.ng",
+						publisher: { "@id": "https://paymint.com.ng/#organization" },
+						description: "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria."
 					},
 					{
 						"@type": "SoftwareApplication",
 						"@id": "https://paymint.com.ng/#app",
-						"name": "PayMint",
-						"applicationCategory": "FinanceApplication",
-						"operatingSystem": "Android, iOS, Web",
-						"offers": {
+						name: "PayMint",
+						applicationCategory: "FinanceApplication",
+						operatingSystem: "Android, iOS, Web",
+						offers: {
 							"@type": "Offer",
-							"price": "0",
-							"priceCurrency": "NGN"
+							price: "0",
+							priceCurrency: "NGN"
 						},
-						"installUrl": "https://play.google.com/store/apps/details?id=com.paymint.app",
-						"downloadUrl": "https://apps.apple.com/us/app/paymint/id6801909031"
+						installUrl: "https://play.google.com/store/apps/details?id=com.paymint.app",
+						downloadUrl: "https://apps.apple.com/us/app/paymint/id6801909031"
 					}
 				]
 			}) }
@@ -608,7 +609,7 @@ var Route$4 = createFileRoute("/terms")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./security-DHdXy5BX.mjs");
+var $$splitComponentImporter$3 = () => import("./security-CeW3WqBS.mjs");
 var Route$3 = createFileRoute("/security")({
 	head: () => ({
 		meta: [
@@ -674,7 +675,7 @@ var Route$2 = createFileRoute("/privacy")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./contact-C9fXJqbP.mjs");
+var $$splitComponentImporter$1 = () => import("./contact-BOQZvwpA.mjs");
 var Route$1 = createFileRoute("/contact")({
 	head: () => ({
 		meta: [
@@ -724,6 +725,11 @@ var PrivacyRoute = Route$2.update({
 	path: "/privacy",
 	getParentRoute: () => Route$5
 });
+var DownloadRoute = Route$6.update({
+	id: "/download",
+	path: "/download",
+	getParentRoute: () => Route$5
+});
 var ContactRoute = Route$1.update({
 	id: "/contact",
 	path: "/contact",
@@ -734,7 +740,7 @@ var IndexRoute = Route.update({
 	path: "/",
 	getParentRoute: () => Route$5
 });
-var InviteIndexRoute = Route$7.update({
+var InviteIndexRoute = Route$8.update({
 	id: "/invite/",
 	path: "/invite/",
 	getParentRoute: () => Route$5
@@ -742,10 +748,11 @@ var InviteIndexRoute = Route$7.update({
 var rootRouteChildren = {
 	IndexRoute,
 	ContactRoute,
+	DownloadRoute,
 	PrivacyRoute,
 	SecurityRoute,
 	TermsRoute,
-	InviteCodeRoute: Route$6.update({
+	InviteCodeRoute: Route$7.update({
 		id: "/invite/$code",
 		path: "/invite/$code",
 		getParentRoute: () => Route$5

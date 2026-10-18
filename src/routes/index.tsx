@@ -26,8 +26,6 @@ const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymin
 const APP_STORE_URL = "https://apps.apple.com/us/app/paymint/id6801909031";
 const WEB_APP_URL = "https://app.paymint.com.ng";
 
-
-
 function PlayStoreButton() {
   return (
     <a
@@ -78,7 +76,9 @@ function WebButton() {
         <Globe className="h-4 w-4 text-brand-deep" />
       </div>
       <div className="text-left leading-tight">
-        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">No app? No problem</div>
+        <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+          No app? No problem
+        </div>
         <div className="font-display text-lg font-semibold">Use on Web</div>
       </div>
     </a>
@@ -94,8 +94,6 @@ function DownloadRow() {
     </div>
   );
 }
-
-
 
 function Hero() {
   return (
@@ -114,14 +112,17 @@ function Hero() {
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-            Fund your wallet.<br />
-            <span className="text-gradient-brand">Pay every bill.</span><br />
+            Fund your wallet.
+            <br />
+            <span className="text-gradient-brand">Pay every bill.</span>
+            <br />
             Instantly.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            PayMint gives you a personal virtual account to load your wallet — then pays your airtime, data,
-            eSIMs, electricity and cable TV in one tap. Right from the app, or from a WhatsApp chat.
+            PayMint gives you a personal virtual account to load your wallet — then pays your
+            airtime, data, eSIMs, electricity and cable TV in one tap. Right from the app, or from a
+            WhatsApp chat.
           </p>
 
           <div className="mt-8">
@@ -208,7 +209,9 @@ function HowItWorks() {
   return (
     <section id="how" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
-        <div className="text-sm font-semibold uppercase tracking-widest text-brand-deep">How it works</div>
+        <div className="text-sm font-semibold uppercase tracking-widest text-brand-deep">
+          How it works
+        </div>
         <h2 className="mt-3 text-4xl font-bold sm:text-5xl">From transfer to paid, in seconds</h2>
         <p className="mt-4 text-muted-foreground">
           A wallet you fund by bank transfer, spent on the bills you already pay every month.
@@ -249,8 +252,12 @@ function Features() {
     <section id="features" className="bg-secondary/40 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="text-sm font-semibold uppercase tracking-widest text-brand-deep">Features</div>
-          <h2 className="mt-3 text-4xl font-bold sm:text-5xl">Everything money should already do</h2>
+          <div className="text-sm font-semibold uppercase tracking-widest text-brand-deep">
+            Features
+          </div>
+          <h2 className="mt-3 text-4xl font-bold sm:text-5xl">
+            Everything money should already do
+          </h2>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-12">
@@ -260,16 +267,23 @@ function Features() {
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-ink text-white">
                 <Wallet className="h-5 w-5" />
               </div>
-              <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">Instant wallet funding</span>
+              <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+                Instant wallet funding
+              </span>
             </div>
-            <h3 className="mt-5 font-display text-3xl font-bold">Your own virtual account, ready to receive</h3>
+            <h3 className="mt-5 font-display text-3xl font-bold">
+              Your own virtual account, ready to receive
+            </h3>
             <p className="mt-3 text-muted-foreground">
-              Every PayMint user gets a static account number for repeat funding and dynamic accounts for one-off
-              transfers. Send from any bank — funds land in your wallet in real time.
+              Every PayMint user gets a static account number for repeat funding and dynamic
+              accounts for one-off transfers. Send from any bank — funds land in your wallet in real
+              time.
             </p>
 
             <div className="mt-6 rounded-2xl border border-border bg-background p-5">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Your static account</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                Your static account
+              </div>
               <div className="mt-2 flex items-center justify-between">
                 <div>
                   <div className="font-display text-2xl font-bold tracking-tight">9042 1188 03</div>
@@ -293,7 +307,10 @@ function Features() {
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
               {bills.map((b) => (
-                <div key={b.label} className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2 text-sm font-semibold">
+                <div
+                  key={b.label}
+                  className="flex items-center gap-2 rounded-xl bg-white/70 px-3 py-2 text-sm font-semibold"
+                >
                   <b.icon className="h-4 w-4" />
                   {b.label}
                 </div>
@@ -307,12 +324,16 @@ function Features() {
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-[#25D366] text-white">
                 <MessageCircle className="h-5 w-5" />
               </div>
-              <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">WhatsApp payments</span>
+              <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+                WhatsApp payments
+              </span>
             </div>
-            <h3 className="mt-5 font-display text-3xl font-bold">Pay bills without leaving your chats</h3>
+            <h3 className="mt-5 font-display text-3xl font-bold">
+              Pay bills without leaving your chats
+            </h3>
             <p className="mt-3 text-muted-foreground">
-              Message PayMint on WhatsApp to fund your wallet, buy airtime, top up data or pay for electricity —
-              no app-switching, no menus.
+              Message PayMint on WhatsApp to fund your wallet, buy airtime, top up data or pay for
+              electricity — no app-switching, no menus.
             </p>
             <div className="mt-6 space-y-2">
               <div className="ml-auto w-fit max-w-[80%] rounded-2xl rounded-br-sm bg-brand-soft px-4 py-2 text-sm">
@@ -330,19 +351,28 @@ function Features() {
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand text-ink">
                 <Gift className="h-5 w-5" />
               </div>
-              <span className="text-sm font-semibold uppercase tracking-widest text-white/60">Refer & Earn</span>
+              <span className="text-sm font-semibold uppercase tracking-widest text-white/60">
+                Refer & Earn
+              </span>
             </div>
-            <h3 className="mt-5 font-display text-3xl font-bold">Get paid, cash, for every friend you bring in</h3>
+            <h3 className="mt-5 font-display text-3xl font-bold">
+              Get paid, cash, for every friend you bring in
+            </h3>
             <p className="mt-3 text-white/70">
-              Share your link. When your friends sign up and start paying bills, you get a cash bonus dropped
-              straight into your PayMint wallet.
+              Share your link. When your friends sign up and start paying bills, you get a cash
+              bonus dropped straight into your PayMint wallet.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <div className="rounded-2xl bg-white/10 px-4 py-3">
-                <div className="text-xs uppercase tracking-widest text-white/60">Bonus / referral</div>
+                <div className="text-xs uppercase tracking-widest text-white/60">
+                  Bonus / referral
+                </div>
                 <div className="font-display text-2xl font-bold text-brand">₦1,500+</div>
               </div>
-              <a href="#refer" className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 font-semibold text-ink transition hover:opacity-90">
+              <a
+                href="#refer"
+                className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 font-semibold text-ink transition hover:opacity-90"
+              >
                 Become a partner <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -365,8 +395,8 @@ function ReferSpotlight() {
           Creators earn cash <span className="text-gradient-brand">every time</span> someone joins.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          Built for influencers, community builders and everyday users. Share your link, watch signups roll in,
-          and get paid — in real Naira, not points.
+          Built for influencers, community builders and everyday users. Share your link, watch
+          signups roll in, and get paid — in real Naira, not points.
         </p>
 
         <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
@@ -398,8 +428,16 @@ function ReferSpotlight() {
 function TrustStrip() {
   const items = [
     { icon: Lock, title: "256-bit encryption", body: "Every transfer is end-to-end encrypted." },
-    { icon: ShieldCheck, title: "Bank-level security", body: "Biometric login and transaction PIN protection." },
-    { icon: BadgeCheck, title: "Licensed partner", body: "Working with regulated payment institutions." },
+    {
+      icon: ShieldCheck,
+      title: "Bank-level security",
+      body: "Biometric login and transaction PIN protection.",
+    },
+    {
+      icon: BadgeCheck,
+      title: "Licensed partner",
+      body: "Working with regulated payment institutions.",
+    },
     { icon: Zap, title: "99.9% uptime", body: "Built to settle when you need it — instantly." },
   ];
   return (
@@ -430,7 +468,9 @@ function DownloadCTA() {
         <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
           <div>
             <h2 className="font-display text-4xl font-bold text-ink sm:text-5xl">
-              One wallet. Every bill.<br />Ready when you are.
+              One wallet. Every bill.
+              <br />
+              Ready when you are.
             </h2>
             <p className="mt-4 max-w-xl text-ink/80">
               Download PayMint on iOS or Android, or hop on the web app right now.
@@ -451,8 +491,6 @@ function DownloadCTA() {
     </section>
   );
 }
-
-
 
 function Landing() {
   return (

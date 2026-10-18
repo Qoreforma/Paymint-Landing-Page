@@ -42,10 +42,10 @@
   --radius: 1rem;
 
   /* PayMint brand */
-  --brand: rgb(11, 69, 200);        /* Deep blue from Logo */
-  --brand-soft: rgba(11, 69, 200, 0.15);   /* pale blue */
-  --brand-deep: rgb(8, 48, 140);   /* deeper blue */
-  --ink: oklch(0.18 0.03 235);         /* deep navy ink */
+  --brand: rgb(11, 69, 200); /* Deep blue from Logo */
+  --brand-soft: rgba(11, 69, 200, 0.15); /* pale blue */
+  --brand-deep: rgb(8, 48, 140); /* deeper blue */
+  --ink: oklch(0.18 0.03 235); /* deep navy ink */
 
   --background: oklch(0.99 0.005 200);
   --foreground: var(--ink);
@@ -54,7 +54,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: var(--ink);
   --primary: var(--brand);
-  --primary-foreground: oklch(1 0 0);  /* changed to white for contrast on deep blue */
+  --primary-foreground: oklch(1 0 0); /* changed to white for contrast on deep blue */
   --secondary: var(--brand-soft);
   --secondary-foreground: var(--ink);
   --muted: oklch(0.96 0.01 210);
@@ -69,15 +69,25 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
 @utility gradient-brand {

@@ -1,6 +1,6 @@
 import { i as require_jsx_runtime } from "../_libs/@radix-ui/react-label+[...].mjs";
-import { g as Lock, l as ShieldCheck, u as Server } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/security-DHdXy5BX.js
+import { d as Server, u as ShieldCheck, y as Lock } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/security-CeW3WqBS.js
 var import_jsx_runtime = require_jsx_runtime();
 function Security() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -92,7 +92,8 @@ function Security() {
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 					className: "text-muted-foreground mt-2",
 					children: [
-						"We have a responsible disclosure program. ",
+						"We have a responsible disclosure program.",
+						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 							href: "mailto:paymint485@gmail.com",
 							className: "text-brand-deep font-medium hover:underline",

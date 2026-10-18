@@ -1,7 +1,7 @@
 import { f as lazyRouteComponent, p as createFileRoute } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as stringType, t as objectType } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/invite.index-CvIeP2pn.js
-var $$splitComponentImporter = () => import("./invite.index-De8bTeJ1.mjs");
+//#region node_modules/.nitro/vite/services/ssr/assets/invite.index-BGbBUVU4.js
+var $$splitComponentImporter = () => import("./invite.index-CQ6dtEeT.mjs");
 var inviteSearchSchema = objectType({
 	code: stringType().optional(),
 	referrer: stringType().optional(),

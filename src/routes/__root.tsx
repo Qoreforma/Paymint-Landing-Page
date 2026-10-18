@@ -84,8 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "PayMint, buy data online, cheap data bundle nigeria, airtime recharge, electricity token, dstv subscription, gotv, startimes, virtual account nigeria, travel esim, fintech nigeria, pay bills whatsapp",
       },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
-      { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+      {
+        name: "googlebot",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
       { name: "author", content: "PayMint" },
       { name: "publisher", content: "PayMint" },
       { name: "application-name", content: "PayMint" },
@@ -141,47 +147,48 @@ function RootShell({ children }: { children: ReactNode }) {
       {
         "@type": "Organization",
         "@id": "https://paymint.com.ng/#organization",
-        "name": "PayMint",
-        "url": "https://paymint.com.ng",
-        "logo": "https://paymint.com.ng/logo.png",
-        "sameAs": [
+        name: "PayMint",
+        url: "https://paymint.com.ng",
+        logo: "https://paymint.com.ng/logo.png",
+        sameAs: [
           "https://play.google.com/store/apps/details?id=com.paymint.app",
           "https://apps.apple.com/us/app/paymint/id6801909031",
-          "https://app.paymint.com.ng"
+          "https://app.paymint.com.ng",
         ],
-        "contactPoint": {
+        contactPoint: {
           "@type": "ContactPoint",
-          "email": "paymint485@gmail.com",
-          "contactType": "customer support",
-          "areaServed": "NG",
-          "availableLanguage": ["en"]
-        }
+          email: "paymint485@gmail.com",
+          contactType: "customer support",
+          areaServed: "NG",
+          availableLanguage: ["en"],
+        },
       },
       {
         "@type": "WebSite",
         "@id": "https://paymint.com.ng/#website",
-        "name": "PayMint",
-        "url": "https://paymint.com.ng",
-        "publisher": {
-          "@id": "https://paymint.com.ng/#organization"
+        name: "PayMint",
+        url: "https://paymint.com.ng",
+        publisher: {
+          "@id": "https://paymint.com.ng/#organization",
         },
-        "description": "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria."
+        description:
+          "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria.",
       },
       {
         "@type": "SoftwareApplication",
         "@id": "https://paymint.com.ng/#app",
-        "name": "PayMint",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Android, iOS, Web",
-        "offers": {
+        name: "PayMint",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Android, iOS, Web",
+        offers: {
           "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "NGN"
+          price: "0",
+          priceCurrency: "NGN",
         },
-        "installUrl": "https://play.google.com/store/apps/details?id=com.paymint.app",
-        "downloadUrl": "https://apps.apple.com/us/app/paymint/id6801909031"
-      }
-    ]
+        installUrl: "https://play.google.com/store/apps/details?id=com.paymint.app",
+        downloadUrl: "https://apps.apple.com/us/app/paymint/id6801909031",
+      },
+    ],
   };
 
   return (

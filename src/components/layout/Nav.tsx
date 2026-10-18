@@ -22,11 +22,18 @@ export function Nav() {
             ["How it works", "/#how"],
             ["Refer & Earn", "/#refer"],
           ].map(([label, href]) => (
-            <a key={href} href={href} className="text-sm font-medium text-muted-foreground transition hover:text-ink">
+            <a
+              key={href}
+              href={href}
+              className="text-sm font-medium text-muted-foreground transition hover:text-ink"
+            >
               {label}
             </a>
           ))}
-          <Link to="/contact" className="text-sm font-medium text-muted-foreground transition hover:text-ink">
+          <Link
+            to="/contact"
+            className="text-sm font-medium text-muted-foreground transition hover:text-ink"
+          >
             Contact
           </Link>
         </nav>
@@ -117,4 +124,3 @@ export function Nav() {
     </header>
   );
 }
-

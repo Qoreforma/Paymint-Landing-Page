@@ -16,7 +16,8 @@ export const Route = createFileRoute("/invite/")({
       { title: "Join PayMint — Referral Invitation" },
       {
         name: "description",
-        content: "Join PayMint to trade crypto, sell gift cards, and pay utility bills in Nigeria with zero fees.",
+        content:
+          "Join PayMint to trade crypto, sell gift cards, and pay utility bills in Nigeria with zero fees.",
       },
       { property: "og:title", content: "Join PayMint — Referral Invitation" },
       {

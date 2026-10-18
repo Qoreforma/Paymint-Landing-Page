@@ -43,8 +43,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://paymint.qoreformasolutionlimited.com.ng/api/v1";
+  import.meta.env.VITE_API_BASE_URL || "https://paymint.qoreformasolutionlimited.com.ng/api/v1";
 
 const FAQ_ITEMS = [
   {
@@ -137,8 +136,7 @@ function ContactPage() {
         message: "",
       });
     } catch (err: any) {
-      const errorText =
-        err?.message || "An unexpected error occurred. Please try again later.";
+      const errorText = err?.message || "An unexpected error occurred. Please try again later.";
       setErrorMessage(errorText);
       toast.error(errorText);
     } finally {
@@ -165,8 +163,8 @@ function ContactPage() {
           </h1>
 
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Have a question about your wallet, a transaction, or looking to partner
-            with us? Send us a message and our team will get back to you right away.
+            Have a question about your wallet, a transaction, or looking to partner with us? Send us
+            a message and our team will get back to you right away.
           </p>
         </div>
 
@@ -176,9 +174,7 @@ function ContactPage() {
           <div className="space-y-8 lg:col-span-5">
             {/* Contact channels card */}
             <div className="rounded-3xl border border-border/80 bg-card/80 p-6 shadow-sm backdrop-blur-sm sm:p-8">
-              <h2 className="font-display text-xl font-bold text-foreground">
-                Contact Channels
-              </h2>
+              <h2 className="font-display text-xl font-bold text-foreground">Contact Channels</h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 Reach out directly through any of our official channels.
               </p>
@@ -220,9 +216,7 @@ function ContactPage() {
                     <div className="font-medium text-foreground group-hover:text-brand-deep">
                       Instant Live Assistant
                     </div>
-                    <div className="text-xs text-muted-foreground">
-                      Pay bills and get help 24/7
-                    </div>
+                    <div className="text-xs text-muted-foreground">Pay bills and get help 24/7</div>
                   </div>
                 </a>
 
@@ -254,10 +248,7 @@ function ContactPage() {
 
               <div className="mt-5 space-y-4 text-sm">
                 {FAQ_ITEMS.map((faq, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl border border-border/50 bg-background/80 p-4"
-                  >
+                  <div key={i} className="rounded-2xl border border-border/50 bg-background/80 p-4">
                     <div className="font-semibold text-foreground">{faq.q}</div>
                     <div className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
                       {faq.a}
@@ -282,8 +273,7 @@ function ContactPage() {
             <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-white/60 px-4 py-3 text-xs text-muted-foreground backdrop-blur">
               <Shield className="h-4 w-4 shrink-0 text-brand" />
               <span>
-                Your privacy and data are encrypted with banking-grade 256-bit SSL
-                security.
+                Your privacy and data are encrypted with banking-grade 256-bit SSL security.
               </span>
             </div>
           </div>
@@ -300,9 +290,8 @@ function ContactPage() {
                     Message Sent Successfully!
                   </h3>
                   <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-                    Thank you for reaching out. Our support administrators have
-                    received your message and will reply to your email address
-                    shortly.
+                    Thank you for reaching out. Our support administrators have received your
+                    message and will reply to your email address shortly.
                   </p>
                   <div className="mt-8 flex flex-wrap justify-center gap-4">
                     <Button
@@ -326,8 +315,7 @@ function ContactPage() {
                       Send a Message
                     </h2>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Fill out the form below and an administrator will respond
-                      promptly.
+                      Fill out the form below and an administrator will respond promptly.
                     </p>
                   </div>
 
@@ -348,9 +336,7 @@ function ContactPage() {
                         type="text"
                         placeholder="e.g. John doe"
                         value={formData.name}
-                        onChange={(e) =>
-                          setFormData({ ...formData, name: e.target.value })
-                        }
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
                         disabled={isSubmitting}
                         className="h-11 rounded-xl border-border bg-background/80 px-3.5 focus-visible:ring-brand"
@@ -366,9 +352,7 @@ function ContactPage() {
                         type="email"
                         placeholder="e.g. you@example.com"
                         value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
                         disabled={isSubmitting}
                         className="h-11 rounded-xl border-border bg-background/80 px-3.5 focus-visible:ring-brand"
@@ -383,9 +367,7 @@ function ContactPage() {
                     <select
                       id="subject"
                       value={formData.subject}
-                      onChange={(e) =>
-                        setFormData({ ...formData, subject: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       disabled={isSubmitting}
                       className="flex h-11 w-full rounded-xl border border-border bg-background/80 px-3.5 text-sm text-foreground shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50"
                     >
@@ -399,9 +381,7 @@ function ContactPage() {
                       <option value="Partnership & Business Integration">
                         Partnership & Business Integration
                       </option>
-                      <option value="Feedback & Suggestions">
-                        Feedback & Suggestions
-                      </option>
+                      <option value="Feedback & Suggestions">Feedback & Suggestions</option>
                     </select>
                   </div>
 
@@ -419,9 +399,7 @@ function ContactPage() {
                       rows={5}
                       placeholder="Please describe how we can help you with as much detail as possible..."
                       value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
                       disabled={isSubmitting}
                       className="min-h-[140px] rounded-xl border-border bg-background/80 p-3.5 text-sm focus-visible:ring-brand"

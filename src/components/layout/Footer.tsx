@@ -18,11 +18,46 @@ export function Footer() {
             Product
           </div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="/#features" className="text-ink/80 transition hover:text-brand-deep">Features</a></li>
-            <li><a href="/#how" className="text-ink/80 transition hover:text-brand-deep">How it works</a></li>
-            <li><a href="https://app.paymint.com.ng" target="_blank" rel="noopener noreferrer" className="text-ink/80 transition hover:text-brand-deep">Web App</a></li>
-            <li><a href="https://apps.apple.com/us/app/paymint/id6801909031" target="_blank" rel="noopener noreferrer" className="text-ink/80 transition hover:text-brand-deep">App Store</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.paymint.app" target="_blank" rel="noopener noreferrer" className="text-ink/80 transition hover:text-brand-deep">Google Play</a></li>
+            <li>
+              <a href="/#features" className="text-ink/80 transition hover:text-brand-deep">
+                Features
+              </a>
+            </li>
+            <li>
+              <a href="/#how" className="text-ink/80 transition hover:text-brand-deep">
+                How it works
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://app.paymint.com.ng"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink/80 transition hover:text-brand-deep"
+              >
+                Web App
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://apps.apple.com/us/app/paymint/id6801909031"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink/80 transition hover:text-brand-deep"
+              >
+                App Store
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.paymint.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink/80 transition hover:text-brand-deep"
+              >
+                Google Play
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -30,9 +65,21 @@ export function Footer() {
             Company
           </div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">Refer & Earn</a></li>
-            <li><a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">Partners</a></li>
-            <li><Link to="/contact" className="text-ink/80 transition hover:text-brand-deep">Contact Us</Link></li>
+            <li>
+              <a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">
+                Refer & Earn
+              </a>
+            </li>
+            <li>
+              <a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">
+                Partners
+              </a>
+            </li>
+            <li>
+              <Link to="/contact" className="text-ink/80 transition hover:text-brand-deep">
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -40,9 +87,21 @@ export function Footer() {
             Legal
           </div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link to="/terms" className="text-ink/80 transition hover:text-brand-deep">Terms</Link></li>
-            <li><Link to="/privacy" className="text-ink/80 transition hover:text-brand-deep">Privacy</Link></li>
-            <li><Link to="/security" className="text-ink/80 transition hover:text-brand-deep">Security</Link></li>
+            <li>
+              <Link to="/terms" className="text-ink/80 transition hover:text-brand-deep">
+                Terms
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacy" className="text-ink/80 transition hover:text-brand-deep">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link to="/security" className="text-ink/80 transition hover:text-brand-deep">
+                Security
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -63,9 +122,15 @@ export function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" aria-label="Twitter" className="hover:text-ink">Twitter</a>
-            <a href="#" aria-label="Instagram" className="hover:text-ink">Instagram</a>
-            <a href="#" aria-label="WhatsApp" className="hover:text-ink">WhatsApp</a>
+            <a href="#" aria-label="Twitter" className="hover:text-ink">
+              Twitter
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-ink">
+              Instagram
+            </a>
+            <a href="#" aria-label="WhatsApp" className="hover:text-ink">
+              WhatsApp
+            </a>
           </div>
         </div>
       </div>

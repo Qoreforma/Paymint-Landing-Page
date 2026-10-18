@@ -1,9 +1,9 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
 import { i as require_jsx_runtime } from "../_libs/@radix-ui/react-label+[...].mjs";
-import { E as Check, b as ExternalLink, l as ShieldCheck, o as Sparkles, s as Smartphone, x as Copy, y as Gift } from "../_libs/lucide-react.mjs";
+import { A as Check, C as Gift, T as Copy, c as Smartphone, s as Sparkles, u as ShieldCheck, w as ExternalLink } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/InviteHandler-CzsGYPZN.js
+//#region node_modules/.nitro/vite/services/ssr/assets/InviteHandler-VPD0xoLo.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var PLAY_STORE_BASE = "https://play.google.com/store/apps/details?id=com.paymint.app";
@@ -97,12 +97,14 @@ function InviteHandler({ referralCode = "" }) {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-3 text-sm sm:text-base text-muted-foreground max-w-md mx-auto",
 				children: cleanCode ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-					"Your invite code ",
+					"Your invite code",
+					" ",
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
 						className: "text-foreground font-mono bg-secondary/80 px-2 py-0.5 rounded",
 						children: cleanCode
 					}),
-					" is attached and will be automatically applied when you open PayMint."
+					" ",
+					"is attached and will be automatically applied when you open PayMint."
 				] }) : "Connecting you to the official PayMint app on your device store."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
