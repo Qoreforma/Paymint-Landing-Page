@@ -17,6 +17,8 @@ import {
   Menu,
 } from "lucide-react";
 import phoneMockup from "@/assets/phoneImage.png";
+import { LiveCampaignSpotlight } from "@/components/landing/LiveCampaignSpotlight";
+import { FaqSection } from "@/components/landing/FaqSection";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -499,7 +501,9 @@ function Landing() {
       <HowItWorks />
       <Features />
       <ReferSpotlight />
+      <LiveCampaignSpotlight />
       <TrustStrip />
+      <FaqSection />
       <DownloadCTA />
     </>
   );

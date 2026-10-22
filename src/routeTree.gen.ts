@@ -14,6 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SecurityRouteImport } from './routes/security'
+import { Route as SpinWinRouteImport } from './routes/spin-win'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as InviteIndexRouteImport } from './routes/invite.index'
 import { Route as InviteCodeRouteImport } from './routes/invite.$code'
@@ -43,6 +44,11 @@ const SecurityRoute = SecurityRouteImport.update({
   path: '/security',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SpinWinRoute = SpinWinRouteImport.update({
+  id: '/spin-win',
+  path: '/spin-win',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/download': typeof DownloadRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
+  '/spin-win': typeof SpinWinRoute
   '/terms': typeof TermsRoute
   '/invite/$code': typeof InviteCodeRoute
   '/invite/': typeof InviteIndexRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/download': typeof DownloadRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
+  '/spin-win': typeof SpinWinRoute
   '/terms': typeof TermsRoute
   '/invite/$code': typeof InviteCodeRoute
   '/invite': typeof InviteIndexRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/download': typeof DownloadRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
+  '/spin-win': typeof SpinWinRoute
   '/terms': typeof TermsRoute
   '/invite/$code': typeof InviteCodeRoute
   '/invite/': typeof InviteIndexRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/download'
     | '/privacy'
     | '/security'
+    | '/spin-win'
     | '/terms'
     | '/invite/$code'
     | '/invite/'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/download'
     | '/privacy'
     | '/security'
+    | '/spin-win'
     | '/terms'
     | '/invite/$code'
     | '/invite'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/download'
     | '/privacy'
     | '/security'
+    | '/spin-win'
     | '/terms'
     | '/invite/$code'
     | '/invite/'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   DownloadRoute: typeof DownloadRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
+  SpinWinRoute: typeof SpinWinRoute
   TermsRoute: typeof TermsRoute
   InviteCodeRoute: typeof InviteCodeRoute
   InviteIndexRoute: typeof InviteIndexRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/spin-win': {
+      id: '/spin-win'
+      path: '/spin-win'
+      fullPath: '/spin-win'
+      preLoaderRoute: typeof SpinWinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadRoute: DownloadRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
+  SpinWinRoute: SpinWinRoute,
   TermsRoute: TermsRoute,
   InviteCodeRoute: InviteCodeRoute,
   InviteIndexRoute: InviteIndexRoute,

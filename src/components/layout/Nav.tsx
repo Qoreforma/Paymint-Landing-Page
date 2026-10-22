@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X, ExternalLink, Sparkles } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { fetchPublicCampaign, PublicCampaignData } from "@/lib/api-client";
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymint.app";
 const APP_STORE_URL = "https://apps.apple.com/us/app/paymint/id6801909031";
@@ -9,9 +10,42 @@ const WEB_APP_URL = "https://app.paymint.com.ng";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [campaignData, setCampaignData] = useState<PublicCampaignData | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    fetchPublicCampaign().then((data) => {
+      if (mounted) setCampaignData(data);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const isCampaignLive = campaignData?.isActive === true;
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-lg">
+      {/* Dynamic Top Announcement Banner when campaign is live */}
+      {isCampaignLive && (
+        <div className="bg-gradient-to-r from-[#0B45C8] via-[#1E5BF0] to-[#0A2E8A] px-4 py-2 text-center text-xs font-medium text-white shadow-inner sm:px-6">
+          <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 flex-wrap">
+            <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+              <Sparkles className="h-3 w-3" /> Live Sprint
+            </span>
+            <span>
+              <strong>{campaignData?.campaign?.tierName || "Spin & Win Sprint"} is LIVE:</strong> Refer friends to earn spins for up to ₦1,000 instant cash & airtime!
+            </span>
+            <Link
+              to="/spin-win"
+              className="inline-flex items-center gap-1 font-semibold underline underline-offset-4 hover:text-white/80 transition"
+            >
+              See Rules & Prizes →
+            </Link>
+          </div>
+        </div>
+      )}
+
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
           <Logo />
@@ -21,6 +55,7 @@ export function Nav() {
             ["Features", "/#features"],
             ["How it works", "/#how"],
             ["Refer & Earn", "/#refer"],
+            ["FAQs", "/#faqs"],
           ].map(([label, href]) => (
             <a
               key={href}
@@ -30,6 +65,21 @@ export function Nav() {
               {label}
             </a>
           ))}
+
+          {/* Spin & Win Campaign Link */}
+          <Link
+            to="/spin-win"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-deep transition hover:text-ink"
+          >
+            <span>Spin & Win</span>
+            {isCampaignLive && (
+              <span className="flex items-center gap-1 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600 border border-emerald-500/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                LIVE
+              </span>
+            )}
+          </Link>
+
           <Link
             to="/contact"
             className="text-sm font-medium text-muted-foreground transition hover:text-ink"
@@ -71,6 +121,7 @@ export function Nav() {
               ["Features", "/#features"],
               ["How it works", "/#how"],
               ["Refer & Earn", "/#refer"],
+              ["FAQs", "/#faqs"],
             ].map(([label, href]) => (
               <a
                 key={href}
@@ -81,6 +132,21 @@ export function Nav() {
                 {label}
               </a>
             ))}
+
+            <Link
+              to="/spin-win"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-between text-base font-semibold text-brand-deep transition hover:text-ink"
+            >
+              <span>Spin & Win Sprint</span>
+              {isCampaignLive && (
+                <span className="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600 border border-emerald-500/20">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  LIVE
+                </span>
+              )}
+            </Link>
+
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}

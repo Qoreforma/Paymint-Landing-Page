@@ -29,6 +29,14 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <Link to="/spin-win" className="text-ink/80 transition hover:text-brand-deep flex items-center gap-1.5 font-medium">
+                <span>Spin & Win Sprint</span>
+                <span className="rounded-full bg-brand-soft px-1.5 py-0.2 text-[9px] font-bold text-brand-deep">
+                  ● LIVE
+                </span>
+              </Link>
+            </li>
+            <li>
               <a
                 href="https://app.paymint.com.ng"
                 target="_blank"
@@ -68,6 +76,11 @@ export function Footer() {
             <li>
               <a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">
                 Refer & Earn
+              </a>
+            </li>
+            <li>
+              <a href="/#faqs" className="text-ink/80 transition hover:text-brand-deep">
+                FAQs & Help
               </a>
             </li>
             <li>
