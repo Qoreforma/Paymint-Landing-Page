@@ -42,7 +42,7 @@ const DEFAULT_FAQS: DisplayFaq[] = [
     id: "spin-2",
     question: "Where do my Spin & Win winnings go?",
     answer:
-      "Cash prizes are credited directly to your PayMint wallet balance and can be spent on any bill payment (airtime, data, electricity, cable TV, eSIMs). Airtime rewards are dispatched instantly to your registered mobile phone number.",
+      "Cash prizes are credited directly to your PayMint wallet balance and can be spent on any bill payment (airtime, data, electricity, cable TV). Airtime rewards are dispatched instantly to your registered mobile phone number.",
     category: "Spin & Win",
   },
   {

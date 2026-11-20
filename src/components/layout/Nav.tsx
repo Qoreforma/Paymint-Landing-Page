@@ -199,7 +199,10 @@ export function Nav() {
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  trackAppDownload("apple");
+                  setIsOpen(false);
+                }}
                 className="flex items-center justify-center rounded-xl bg-ink py-3 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 Get the App (iOS)
@@ -208,7 +211,10 @@ export function Nav() {
                 href={PLAY_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  trackAppDownload("google");
+                  setIsOpen(false);
+                }}
                 className="flex items-center justify-center rounded-xl bg-ink py-3 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 Get the App (Android)
