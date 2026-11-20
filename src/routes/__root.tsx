@@ -77,12 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "PayMint is Nigeria's mobile-first wallet for airtime, cheap data bundles, electricity tokens, cable TV, and global travel eSIMs. Fund via instant virtual accounts.",
+          "PayMint is Nigeria's mobile-first wallet for airtime, cheap data bundles, electricity tokens, and cable TV. Fund via instant virtual accounts.",
       },
       {
         name: "keywords",
         content:
-          "PayMint, buy data online, cheap data bundle nigeria, airtime recharge, electricity token, dstv subscription, gotv, startimes, virtual account nigeria, travel esim, fintech nigeria, pay bills whatsapp",
+          "PayMint, buy data online, cheap data bundle nigeria, airtime recharge, electricity token, dstv subscription, gotv, startimes, virtual account nigeria, fintech nigeria, pay bills whatsapp",
       },
       {
         name: "robots",
@@ -104,24 +104,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "One wallet for airtime, cheap data, electricity, cable TV, and travel eSIMs. Fund via instant virtual account and pay in seconds.",
+          "One wallet for airtime, cheap data, electricity, and cable TV. Fund via instant virtual account and pay in seconds.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://paymint.com.ng" },
+      { property: "og:url", content: "https://www.paymint.com.ng" },
       { property: "og:locale", content: "en_NG" },
-      { property: "og:image", content: "https://paymint.com.ng/logo.png" },
+      { property: "og:image", content: "https://www.paymint.com.ng/logo.png" },
       { property: "og:image:alt", content: "PayMint — Fund your wallet. Pay every bill." },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "PayMint — Fund your wallet. Pay every bill." },
       {
         name: "twitter:description",
         content:
-          "One wallet for airtime, data, electricity, cable TV, and eSIMs. Pay from the mobile app or web.",
+          "One wallet for airtime, data, electricity, and cable TV. Pay from the mobile app or web.",
       },
-      { name: "twitter:image", content: "https://paymint.com.ng/logo.png" },
+      { name: "twitter:image", content: "https://www.paymint.com.ng/logo.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://paymint.com.ng" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -141,15 +140,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://paymint.com.ng/#organization",
+        "@id": "https://www.paymint.com.ng/#organization",
         name: "PayMint",
-        url: "https://paymint.com.ng",
-        logo: "https://paymint.com.ng/logo.png",
+        url: "https://www.paymint.com.ng",
+        logo: "https://www.paymint.com.ng/logo.png",
         sameAs: [
           "https://play.google.com/store/apps/details?id=com.paymint.app",
           "https://apps.apple.com/us/app/paymint/id6801909031",
@@ -165,18 +166,18 @@ function RootShell({ children }: { children: ReactNode }) {
       },
       {
         "@type": "WebSite",
-        "@id": "https://paymint.com.ng/#website",
+        "@id": "https://www.paymint.com.ng/#website",
         name: "PayMint",
-        url: "https://paymint.com.ng",
+        url: "https://www.paymint.com.ng",
         publisher: {
-          "@id": "https://paymint.com.ng/#organization",
+          "@id": "https://www.paymint.com.ng/#organization",
         },
         description:
-          "Smart wallet for instant airtime, data bundles, electricity tokens, cable TV, and global travel eSIMs in Nigeria.",
+          "Smart wallet for instant airtime, data bundles, electricity tokens, and cable TV in Nigeria.",
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://paymint.com.ng/#app",
+        "@id": "https://www.paymint.com.ng/#app",
         name: "PayMint",
         applicationCategory: "FinanceApplication",
         operatingSystem: "Android, iOS, Web",
@@ -199,6 +200,21 @@ function RootShell({ children }: { children: ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        {gaId ? (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `,
+              }}
+            />
+          </>
+        ) : null}
       </head>
       <body>
         {children}

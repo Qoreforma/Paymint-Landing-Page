@@ -135,9 +135,29 @@ function handleSmartDownload(request: Request): Response | null {
   return null;
 }
 
+function handleApexRedirect(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (url.hostname === "paymint.com.ng") {
+    url.hostname = "www.paymint.com.ng";
+    return new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+        "Cache-Control": "public, max-age=31536000, immutable",
+      },
+    });
+  }
+  return null;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const apexRedirect = handleApexRedirect(request);
+      if (apexRedirect) {
+        return apexRedirect;
+      }
+
       const redirectResponse = handleSmartDownload(request);
       if (redirectResponse) {
         return redirectResponse;

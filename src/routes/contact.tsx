@@ -34,10 +34,10 @@ export const Route = createFileRoute("/contact")({
         content:
           "Reach out to the PayMint support team for any questions or transaction assistance.",
       },
-      { property: "og:url", content: "https://paymint.com.ng/contact" },
+      { property: "og:url", content: "https://www.paymint.com.ng/contact" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://paymint.com.ng/contact" }],
+    links: [{ rel: "canonical", href: "https://www.paymint.com.ng/contact" }],
   }),
   component: ContactPage,
 });

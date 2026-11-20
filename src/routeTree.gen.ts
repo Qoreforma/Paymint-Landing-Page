@@ -16,8 +16,15 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SpinWinRouteImport } from './routes/spin-win'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as InviteIndexRouteImport } from './routes/invite.index'
 import { Route as InviteCodeRouteImport } from './routes/invite.$code'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAirtimeRouteImport } from './routes/services.airtime'
+import { Route as ServicesCableTvRouteImport } from './routes/services.cable-tv'
+import { Route as ServicesDataRouteImport } from './routes/services.data'
+import { Route as ServicesElectricityRouteImport } from './routes/services.electricity'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -54,6 +61,16 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InviteIndexRoute = InviteIndexRouteImport.update({
   id: '/invite/',
   path: '/invite/',
@@ -62,6 +79,31 @@ const InviteIndexRoute = InviteIndexRouteImport.update({
 const InviteCodeRoute = InviteCodeRouteImport.update({
   id: '/invite/$code',
   path: '/invite/$code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesAirtimeRoute = ServicesAirtimeRouteImport.update({
+  id: '/services/airtime',
+  path: '/services/airtime',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCableTvRoute = ServicesCableTvRouteImport.update({
+  id: '/services/cable-tv',
+  path: '/services/cable-tv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesDataRoute = ServicesDataRouteImport.update({
+  id: '/services/data',
+  path: '/services/data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesElectricityRoute = ServicesElectricityRouteImport.update({
+  id: '/services/electricity',
+  path: '/services/electricity',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -73,8 +115,15 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/spin-win': typeof SpinWinRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/invite/$code': typeof InviteCodeRoute
+  '/services/airtime': typeof ServicesAirtimeRoute
+  '/services/cable-tv': typeof ServicesCableTvRoute
+  '/services/data': typeof ServicesDataRoute
+  '/services/electricity': typeof ServicesElectricityRoute
+  '/blog/': typeof BlogIndexRoute
   '/invite/': typeof InviteIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -84,8 +133,15 @@ export interface FileRoutesByTo {
   '/security': typeof SecurityRoute
   '/spin-win': typeof SpinWinRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/invite/$code': typeof InviteCodeRoute
+  '/services/airtime': typeof ServicesAirtimeRoute
+  '/services/cable-tv': typeof ServicesCableTvRoute
+  '/services/data': typeof ServicesDataRoute
+  '/services/electricity': typeof ServicesElectricityRoute
+  '/blog': typeof BlogIndexRoute
   '/invite': typeof InviteIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -96,8 +152,15 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/spin-win': typeof SpinWinRoute
   '/terms': typeof TermsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/invite/$code': typeof InviteCodeRoute
+  '/services/airtime': typeof ServicesAirtimeRoute
+  '/services/cable-tv': typeof ServicesCableTvRoute
+  '/services/data': typeof ServicesDataRoute
+  '/services/electricity': typeof ServicesElectricityRoute
+  '/blog/': typeof BlogIndexRoute
   '/invite/': typeof InviteIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -109,8 +172,15 @@ export interface FileRouteTypes {
     | '/security'
     | '/spin-win'
     | '/terms'
+    | '/blog/$slug'
     | '/invite/$code'
+    | '/services/airtime'
+    | '/services/cable-tv'
+    | '/services/data'
+    | '/services/electricity'
+    | '/blog/'
     | '/invite/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -120,8 +190,15 @@ export interface FileRouteTypes {
     | '/security'
     | '/spin-win'
     | '/terms'
+    | '/blog/$slug'
     | '/invite/$code'
+    | '/services/airtime'
+    | '/services/cable-tv'
+    | '/services/data'
+    | '/services/electricity'
+    | '/blog'
     | '/invite'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -131,8 +208,15 @@ export interface FileRouteTypes {
     | '/security'
     | '/spin-win'
     | '/terms'
+    | '/blog/$slug'
     | '/invite/$code'
+    | '/services/airtime'
+    | '/services/cable-tv'
+    | '/services/data'
+    | '/services/electricity'
+    | '/blog/'
     | '/invite/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -143,8 +227,15 @@ export interface RootRouteChildren {
   SecurityRoute: typeof SecurityRoute
   SpinWinRoute: typeof SpinWinRoute
   TermsRoute: typeof TermsRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   InviteCodeRoute: typeof InviteCodeRoute
+  ServicesAirtimeRoute: typeof ServicesAirtimeRoute
+  ServicesCableTvRoute: typeof ServicesCableTvRoute
+  ServicesDataRoute: typeof ServicesDataRoute
+  ServicesElectricityRoute: typeof ServicesElectricityRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   InviteIndexRoute: typeof InviteIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -198,6 +289,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/invite/': {
       id: '/invite/'
       path: '/invite'
@@ -212,6 +317,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InviteCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/airtime': {
+      id: '/services/airtime'
+      path: '/services/airtime'
+      fullPath: '/services/airtime'
+      preLoaderRoute: typeof ServicesAirtimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/cable-tv': {
+      id: '/services/cable-tv'
+      path: '/services/cable-tv'
+      fullPath: '/services/cable-tv'
+      preLoaderRoute: typeof ServicesCableTvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/data': {
+      id: '/services/data'
+      path: '/services/data'
+      fullPath: '/services/data'
+      preLoaderRoute: typeof ServicesDataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/electricity': {
+      id: '/services/electricity'
+      path: '/services/electricity'
+      fullPath: '/services/electricity'
+      preLoaderRoute: typeof ServicesElectricityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -223,8 +363,15 @@ const rootRouteChildren: RootRouteChildren = {
   SecurityRoute: SecurityRoute,
   SpinWinRoute: SpinWinRoute,
   TermsRoute: TermsRoute,
+  BlogSlugRoute: BlogSlugRoute,
   InviteCodeRoute: InviteCodeRoute,
+  ServicesAirtimeRoute: ServicesAirtimeRoute,
+  ServicesCableTvRoute: ServicesCableTvRoute,
+  ServicesDataRoute: ServicesDataRoute,
+  ServicesElectricityRoute: ServicesElectricityRoute,
+  BlogIndexRoute: BlogIndexRoute,
   InviteIndexRoute: InviteIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

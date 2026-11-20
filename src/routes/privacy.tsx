@@ -15,10 +15,10 @@ export const Route = createFileRoute("/privacy")({
         content:
           "PayMint's Privacy Policy explaining how we collect, store, and protect your personal information.",
       },
-      { property: "og:url", content: "https://paymint.com.ng/privacy" },
+      { property: "og:url", content: "https://www.paymint.com.ng/privacy" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://paymint.com.ng/privacy" }],
+    links: [{ rel: "canonical", href: "https://www.paymint.com.ng/privacy" }],
   }),
   component: PrivacyPolicy,
 });

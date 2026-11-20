@@ -3,7 +3,7 @@ Allow: /
 Disallow: /invite/
 
 # Host
-Host: https://paymint.com.ng
+Host: https://www.paymint.com.ng
 
 # Sitemaps
-Sitemap: https://paymint.com.ng/sitemap.xml
+Sitemap: https://www.paymint.com.ng/sitemap.xml

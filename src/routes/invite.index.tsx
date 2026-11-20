@@ -13,6 +13,7 @@ export const Route = createFileRoute("/invite/")({
   component: InviteIndexRoute,
   head: () => ({
     meta: [
+      { name: "robots", content: "noindex, follow" },
       { title: "Join PayMint — Referral Invitation" },
       {
         name: "description",

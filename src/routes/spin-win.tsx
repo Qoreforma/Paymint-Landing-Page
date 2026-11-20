@@ -34,11 +34,11 @@ export const Route = createFileRoute("/spin-win")({
         content:
           "Official rules and live prize odds for PayMint's Spin & Win Sprint. Read how to qualify, fair-play protections, and dispute appeals.",
       },
-      { property: "og:url", content: "https://paymint.com.ng/spin-win" },
-      { property: "og:image", content: "https://paymint.com.ng/spin-win-hero.jpg" },
+      { property: "og:url", content: "https://www.paymint.com.ng/spin-win" },
+      { property: "og:image", content: "https://www.paymint.com.ng/spin-win-hero.jpg" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://paymint.com.ng/spin-win" }],
+    links: [{ rel: "canonical", href: "https://www.paymint.com.ng/spin-win" }],
   }),
   component: SpinWinPage,
 });

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "@/components/Logo";
+import { trackAppDownload, trackWebAppClick } from "@/lib/analytics";
 
 export function Footer() {
   return (
@@ -10,8 +11,40 @@ export function Footer() {
             <Logo />
           </Link>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            The wallet for airtime, data, eSIMs, electricity, cable TV and every other bill.
+            The wallet for airtime, data, electricity, cable TV and every other bill.
           </p>
+        </div>
+        <div>
+          <div className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+            Services
+          </div>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link to="/services/data" className="text-ink/80 transition hover:text-brand-deep">
+                Cheap Internet Data
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/airtime" className="text-ink/80 transition hover:text-brand-deep">
+                Airtime Recharge
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/electricity" className="text-ink/80 transition hover:text-brand-deep">
+                Prepaid Electricity
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/cable-tv" className="text-ink/80 transition hover:text-brand-deep">
+                Cable TV Renewal
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="font-semibold text-brand-deep hover:underline">
+                All Services →
+              </Link>
+            </li>
+          </ul>
         </div>
         <div>
           <div className="font-display text-sm font-semibold uppercase tracking-widest text-muted-foreground">
@@ -41,6 +74,7 @@ export function Footer() {
                 href="https://app.paymint.com.ng"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWebAppClick("footer_webapp")}
                 className="text-ink/80 transition hover:text-brand-deep"
               >
                 Web App
@@ -51,6 +85,7 @@ export function Footer() {
                 href="https://apps.apple.com/us/app/paymint/id6801909031"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackAppDownload("apple")}
                 className="text-ink/80 transition hover:text-brand-deep"
               >
                 App Store
@@ -61,6 +96,7 @@ export function Footer() {
                 href="https://play.google.com/store/apps/details?id=com.paymint.app"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackAppDownload("google")}
                 className="text-ink/80 transition hover:text-brand-deep"
               >
                 Google Play
@@ -73,6 +109,11 @@ export function Footer() {
             Company
           </div>
           <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link to="/blog" className="text-ink/80 transition hover:text-brand-deep">
+                Blog & Guides
+              </Link>
+            </li>
             <li>
               <a href="/#refer" className="text-ink/80 transition hover:text-brand-deep">
                 Refer & Earn

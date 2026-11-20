@@ -16,10 +16,10 @@ export const Route = createFileRoute("/security")({
         content:
           "Bank-level 256-bit encryption and security standards protecting your wallet and payments.",
       },
-      { property: "og:url", content: "https://paymint.com.ng/security" },
+      { property: "og:url", content: "https://www.paymint.com.ng/security" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://paymint.com.ng/security" }],
+    links: [{ rel: "canonical", href: "https://www.paymint.com.ng/security" }],
   }),
   component: Security,
 });

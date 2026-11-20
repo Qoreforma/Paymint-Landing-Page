@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, ExternalLink, Sparkles } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { fetchPublicCampaign, PublicCampaignData } from "@/lib/api-client";
+import { trackWebAppClick, trackAppDownload } from "@/lib/analytics";
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.paymint.app";
 const APP_STORE_URL = "https://apps.apple.com/us/app/paymint/id6801909031";
@@ -51,6 +52,12 @@ export function Nav() {
           <Logo />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
+          <Link
+            to="/services"
+            className="text-sm font-medium text-muted-foreground transition hover:text-ink"
+          >
+            Services
+          </Link>
           {[
             ["Features", "/#features"],
             ["How it works", "/#how"],
@@ -65,6 +72,13 @@ export function Nav() {
               {label}
             </a>
           ))}
+
+          <Link
+            to="/blog"
+            className="text-sm font-medium text-muted-foreground transition hover:text-ink"
+          >
+            Blog
+          </Link>
 
           {/* Spin & Win Campaign Link */}
           <Link
@@ -92,6 +106,7 @@ export function Nav() {
             href={WEB_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWebAppClick("nav_desktop", "use_on_web")}
             className="hidden items-center gap-1.5 rounded-full border border-border bg-secondary/60 px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-secondary hover:border-brand/40 sm:inline-flex"
           >
             <span>Use Web App</span>
@@ -117,6 +132,13 @@ export function Nav() {
       {isOpen && (
         <div className="border-b border-border/60 bg-background/95 px-4 py-6 backdrop-blur-lg md:hidden sm:px-6">
           <nav className="flex flex-col space-y-4">
+            <Link
+              to="/services"
+              onClick={() => setIsOpen(false)}
+              className="text-base font-semibold text-foreground transition hover:text-brand-deep"
+            >
+              Services
+            </Link>
             {[
               ["Features", "/#features"],
               ["How it works", "/#how"],
@@ -132,6 +154,14 @@ export function Nav() {
                 {label}
               </a>
             ))}
+
+            <Link
+              to="/blog"
+              onClick={() => setIsOpen(false)}
+              className="text-base font-semibold text-foreground transition hover:text-brand-deep"
+            >
+              Blog & Guides
+            </Link>
 
             <Link
               to="/spin-win"

@@ -144,3 +144,66 @@ export async function fetchFaqs(): Promise<FaqItem[]> {
     return [];
   }
 }
+
+export interface PublicProduct {
+  _id?: string;
+  name: string;
+  amount: number;
+  provider?: string;
+  providerId?: string;
+  serviceId?: string;
+  productType?: string;
+  dataType?: string;
+  description?: string;
+  validity?: string;
+}
+
+export const FALLBACK_DATA_PLANS: Record<string, { size: string; price: number; validity: string }[]> = {
+  mtn: [
+    { size: "500MB", price: 150, validity: "30 Days" },
+    { size: "1GB", price: 285, validity: "30 Days" },
+    { size: "2GB", price: 570, validity: "30 Days" },
+    { size: "3GB", price: 855, validity: "30 Days" },
+    { size: "5GB", price: 1425, validity: "30 Days" },
+    { size: "10GB", price: 2850, validity: "30 Days" },
+  ],
+  airtel: [
+    { size: "500MB", price: 155, validity: "30 Days" },
+    { size: "1GB", price: 295, validity: "30 Days" },
+    { size: "2GB", price: 590, validity: "30 Days" },
+    { size: "5GB", price: 1475, validity: "30 Days" },
+    { size: "10GB", price: 2950, validity: "30 Days" },
+  ],
+  glo: [
+    { size: "1GB", price: 270, validity: "30 Days" },
+    { size: "2GB", price: 540, validity: "30 Days" },
+    { size: "3GB", price: 810, validity: "30 Days" },
+    { size: "5GB", price: 1350, validity: "30 Days" },
+    { size: "10GB", price: 2700, validity: "30 Days" },
+  ],
+  "9mobile": [
+    { size: "1GB", price: 260, validity: "30 Days" },
+    { size: "2GB", price: 520, validity: "30 Days" },
+    { size: "3GB", price: 780, validity: "30 Days" },
+    { size: "5GB", price: 1300, validity: "30 Days" },
+    { size: "10GB", price: 2600, validity: "30 Days" },
+  ],
+};
+
+export async function fetchPublicDataPlans(): Promise<PublicProduct[]> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/reference/products?productType=data&limit=100`, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return [];
+    const json = await res.json();
+    if (json?.data?.products && Array.isArray(json.data.products)) {
+      return json.data.products;
+    }
+    return [];
+  } catch (error) {
+    console.warn("[ProductsAPI] Error fetching data products:", error);
+    return [];
+  }
+}

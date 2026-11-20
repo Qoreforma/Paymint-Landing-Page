@@ -15,10 +15,10 @@ export const Route = createFileRoute("/terms")({
         content:
           "Official Terms of Service for using the PayMint app, wallet, and bill payment platform.",
       },
-      { property: "og:url", content: "https://paymint.com.ng/terms" },
+      { property: "og:url", content: "https://www.paymint.com.ng/terms" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://paymint.com.ng/terms" }],
+    links: [{ rel: "canonical", href: "https://www.paymint.com.ng/terms" }],
   }),
   component: Terms,
 });

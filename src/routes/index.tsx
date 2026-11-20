@@ -19,8 +19,12 @@ import {
 import phoneMockup from "@/assets/phoneImage.png";
 import { LiveCampaignSpotlight } from "@/components/landing/LiveCampaignSpotlight";
 import { FaqSection } from "@/components/landing/FaqSection";
+import { trackAppDownload, trackWebAppClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://www.paymint.com.ng" }],
+  }),
   component: Landing,
 });
 
@@ -34,6 +38,7 @@ function PlayStoreButton() {
       href={PLAY_STORE_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackAppDownload("android", "hero_landing")}
       className="group inline-flex items-center gap-3 rounded-2xl bg-ink px-5 py-3 text-white transition hover:opacity-90"
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden>
@@ -53,6 +58,7 @@ function AppStoreButton() {
       href={APP_STORE_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackAppDownload("ios", "hero_landing")}
       className="group inline-flex items-center gap-3 rounded-2xl bg-ink px-5 py-3 text-white transition hover:opacity-90"
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden>
@@ -72,6 +78,7 @@ function WebButton() {
       href={WEB_APP_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWebAppClick("hero_landing", "use_on_web")}
       className="group inline-flex items-center gap-3 rounded-2xl border-2 border-ink/10 bg-white px-5 py-3 text-ink transition hover:border-brand hover:shadow-[0_10px_30px_-10px_oklch(0.82_0.13_200_/_0.5)]"
     >
       <div className="grid h-7 w-7 place-items-center rounded-lg bg-brand-soft">
@@ -123,7 +130,7 @@ function Hero() {
 
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             PayMint gives you a personal virtual account to load your wallet — then pays your
-            airtime, data, eSIMs, electricity and cable TV in one tap. Right from the app, or from a
+            airtime, data, electricity and cable TV in one tap. Right from the app, or from a
             WhatsApp chat.
           </p>
 
@@ -194,7 +201,7 @@ function HowItWorks() {
     {
       icon: Sparkles,
       title: "Choose a bill",
-      body: "Airtime, data, eSIM, electricity, cable TV — pick what you want to pay in seconds.",
+      body: "Airtime, data, electricity, cable TV — pick what you want to pay in seconds.",
     },
     {
       icon: Zap,
@@ -245,9 +252,9 @@ function Features() {
   const bills = [
     { icon: Smartphone, label: "Airtime" },
     { icon: Wifi, label: "Data" },
-    { icon: Globe, label: "eSIM" },
     { icon: Zap, label: "Electricity" },
     { icon: Tv, label: "Cable TV" },
+    { icon: ShieldCheck, label: "Virtual Accounts" },
     { icon: Sparkles, label: "And more" },
   ];
   return (
