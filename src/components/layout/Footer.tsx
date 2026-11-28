@@ -70,6 +70,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/leagues" className="text-ink/80 transition hover:text-brand-deep">
+                Leagues & Leaderboard
+              </Link>
+            </li>
+            <li>
               <a
                 href="https://app.paymint.com.ng"
                 target="_blank"

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as LeaguesRouteImport } from './routes/leagues'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SpinWinRouteImport } from './routes/spin-win'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -44,6 +45,11 @@ const DownloadRoute = DownloadRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaguesRoute = LeaguesRouteImport.update({
+  id: '/leagues',
+  path: '/leagues',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecurityRoute = SecurityRouteImport.update({
@@ -111,6 +117,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/download': typeof DownloadRoute
+  '/leagues': typeof LeaguesRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/spin-win': typeof SpinWinRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/download': typeof DownloadRoute
+  '/leagues': typeof LeaguesRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/spin-win': typeof SpinWinRoute
@@ -148,6 +156,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/download': typeof DownloadRoute
+  '/leagues': typeof LeaguesRoute
   '/privacy': typeof PrivacyRoute
   '/security': typeof SecurityRoute
   '/spin-win': typeof SpinWinRoute
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/download'
+    | '/leagues'
     | '/privacy'
     | '/security'
     | '/spin-win'
@@ -186,6 +196,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/download'
+    | '/leagues'
     | '/privacy'
     | '/security'
     | '/spin-win'
@@ -204,6 +215,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/download'
+    | '/leagues'
     | '/privacy'
     | '/security'
     | '/spin-win'
@@ -223,6 +235,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   DownloadRoute: typeof DownloadRoute
+  LeaguesRoute: typeof LeaguesRoute
   PrivacyRoute: typeof PrivacyRoute
   SecurityRoute: typeof SecurityRoute
   SpinWinRoute: typeof SpinWinRoute
@@ -259,6 +272,13 @@ declare module '@tanstack/react-router' {
       path: '/download'
       fullPath: '/download'
       preLoaderRoute: typeof DownloadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leagues': {
+      id: '/leagues'
+      path: '/leagues'
+      fullPath: '/leagues'
+      preLoaderRoute: typeof LeaguesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -359,6 +379,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   DownloadRoute: DownloadRoute,
+  LeaguesRoute: LeaguesRoute,
   PrivacyRoute: PrivacyRoute,
   SecurityRoute: SecurityRoute,
   SpinWinRoute: SpinWinRoute,
